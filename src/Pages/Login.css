@@ -1,0 +1,201 @@
+/* ---------- ROOT COLORS ---------- */
+:root {
+  --dark: #101F26;
+  --light: #E7E8EB;
+  --grey: #C5C4C4;
+  --green: #6ECB94;
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+/* ---------- PAGE WRAPPER ---------- */
+.login-wrapper {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--dark);
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* ---------- CARD ---------- */
+.login-card {
+  width: 420px;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 35px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  animation: floatUp 0.8s ease;
+  transition: 0.3s ease;
+}
+
+.login-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* ---------- LOGO ---------- */
+.login-logo {
+  width: 80px;
+  margin: 0 auto;
+  display: block;
+  animation: fadeInDown 1s ease;
+}
+
+.login-title {
+  text-align: center;
+  margin: 15px 0 25px;
+  color: white;
+  font-weight: 600;
+}
+
+/* ---------- LABELS & INPUTS ---------- */
+label {
+  color: var(--light);
+  margin-bottom: 6px;
+  display: block;
+  font-size: 14px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background: var(--light);
+  color: var(--dark);
+  margin-bottom: 18px;
+  font-size: 14px;
+}
+
+/* ----- Password Field Wrapper ----- */
+.password-field {
+  position: relative;
+}
+
+.eye-icon {
+  position: absolute;
+  right: 12px;
+  top: 11px;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: 0.2s;
+}
+
+.eye-icon:hover {
+  opacity: 0.9;
+}
+
+/* ---------- BUTTONS ---------- */
+.btn-signin {
+  width: 100%;
+  padding: 12px;
+  background: var(--dark);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  margin-top: 5px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn-signin:hover {
+  background: #0b171c;
+  transform: translateY(-2px);
+}
+
+.forgot {
+  color: var(--grey);
+  font-size: 13px;
+  margin-top: -8px;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+/* ---------- SOCIAL PROVIDERS ---------- */
+.continue {
+  text-align: center;
+  color: var(--grey);
+  margin: 15px 0;
+}
+
+.providers {
+  display: flex;
+  justify-content: space-between;
+}
+
+.provider {
+  width: 100px;
+  height: 40px;
+  border-radius: 8px;
+  border: none;
+  background: var(--light);
+  color: var(--dark);
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.provider:hover {
+  background: var(--green);
+  color: white;
+}
+
+/* ---------- REGISTER ---------- */
+.register {
+  text-align: center;
+  margin-top: 18px;
+  color: var(--grey);
+  font-size: 13px;
+}
+
+.register span {
+  color: var(--green);
+  cursor: pointer;
+}
+
+/* ---------- ANIMATIONS ---------- */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes floatUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+@media (max-width: 480px) {
+  .login-card {
+    width: 92%;
+    padding: 20px;
+  }
+
+  label {
+    font-size: 13px;
+  }
+
+  .forgot,
+  .register {
+    font-size: 12px;
+  }
+  .providers {
+    flex-direction: column;
+    
+  }
+
+  .provider {
+    width: 100%;
+    margin-bottom: 3%;
+  }
+}
