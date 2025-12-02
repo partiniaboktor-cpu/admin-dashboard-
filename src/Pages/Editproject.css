@@ -1,0 +1,92 @@
+.alledits{
+    display: flex;
+    flex-direction: row;
+    gap: 2%;
+    margin-top: 5%;
+}
+.left-box{
+    background-color: #E7E8EB;
+    width: 40%;
+    border-radius: 30px;
+    height: 300px;
+}
+.leftm{
+    padding-left: 6%;
+    margin-top: 3%;
+}
+.pic-btn{
+    display: flex;
+    flex-direction: row;
+    /* align-items: center; */
+    margin-top: 5%;
+    gap: 15%;
+}
+.edit-type{
+    display: flex;
+    flex-direction: column;
+    gap: 20%;
+    margin-top: 8%;
+  
+}
+.replace{
+    background-color: #101F26;
+    font-size: 20px;
+    border-radius: 20px;
+    color: #32965D;
+        padding: 5% 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.remove{
+    background-color: #101F26;
+    font-size: 20px;
+    border-radius: 20px;
+    color: #D77C7E;
+    padding: 5% 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.add{
+    color: white;
+    background-color: #101f2600;
+    border-style: none;
+}
+.upload{
+       background-color: #101F26;
+    font-size: 20px;
+    border-radius: 20px;
+    width: 60%;
+    padding: 2% 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5%;
+    margin-top: 5%;
+}
+.right-box{
+    width: 60%;
+    background-color: #E7E8EB;
+    border-radius: 30px;
+    height: 600px;
+}
+.only-box{
+    background-color: #C8CCCF;
+    border-radius: 30px;
+    width: 80%;
+    height: 40px;
+}
+.fields{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+}
+.empty-box{
+    margin-top: 3%;
+}
+.two-fields{
+    display: flex;
+    flex-direction: row;
+    gap: 4%;
+}
