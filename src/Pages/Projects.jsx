@@ -9,7 +9,7 @@ import state2 from '../Images/state 2.svg' ;
 import edit from '../Images/edit.svg' ;
 import trash from '../Images/delete.svg' ;
 import Lightbuttons from '../Components/Lightbuttons';
-import Pagenumber from '../Components/Pgenumber';
+import Pagenumber from '../Components/Pagenumber';
 import Footer from '../Components/Footer';
 
 

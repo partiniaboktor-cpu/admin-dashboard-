@@ -4,7 +4,7 @@ import '../Components/Pagenumber.css' ;
 const Pagenumber = (props) => {
     return ( <>
     
-    <p className='page'>page 1 of 10</p>
+    <p className='page'>{props.title}</p>
             
     
     
