@@ -1,8 +1,99 @@
-.section1{
-    padding-left: 28%;
-    padding-top: 2%;
-    z-index: 1000;
-    background-color: #0b173927;
+*{
+    padding: 0;
+    margin: 0;
+}
+.bigdiv{
+    width: 98%;
+    padding: 0 5;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+}
+.aside{
+    width: 30%;
+}
+.secdiv{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0 5%;
+}
+.topboxes{
+    display: flex;
+    flex-direction: row;
+   gap: 5%;
+    justify-content: space-between;
+}
+.butns{
+    display: flex;
+    flex-direction: row;
+    gap: 5%;
+}
+.topboxess{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 3%;
+}
+.secbox{
+    background-color: #0b173928;
     border-radius: 20px;
-    width: 10%;
+    width: 40%;
+    margin-top: 3%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+.part1{
+    display: flex;
+    flex-direction: row;
+    gap: 25%;
+    padding-top: 5%;
+    padding-left: 5%;
+}
+.ab{
+    color: #577D8F;
+    font-size: 22px;
+    font-weight: 600;
+}
+.part2{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    gap: 5%;
+    padding-top: 5%;
+    padding-left: 5%;
+}
+.shorts{
+    font-size: 20px;
+    font-weight: 100;
+}
+.shortss{
+    font-size: 20px;
+    font-weight: 100;
+    /* padding-bottom: 5%; */
+}
+.part22{
+    display: flex;
+    flex-direction: column;
+    /* text-align: center;
+    align-items: center; */
+    gap: 5%;
+    padding-top: 5%;
+    padding-left: 5%;
+    line-height: 30px;
+}
+.part11{
+    display: flex;
+    flex-direction: row;
+    gap: 15%;
+    padding-top: 5%;
+    padding-left: 5%;
+}
+.graph{
+        display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 3%;
 }
