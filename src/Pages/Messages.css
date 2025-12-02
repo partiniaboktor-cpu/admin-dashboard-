@@ -1,4 +1,77 @@
 .top-messages{
     display: flex;
     flex-direction: row;
+    align-items: center;
+    text-align: center;
+    /* margin-top: 3%; */
+    gap: 53%;
+}
+.allmsg{
+    background-color: #101F26;
+    color: white;
+    padding: 1% 15%;
+    border-radius: 20px;
+}
+.right-msg{
+    display: flex;
+    flex-direction: row;
+    gap: 3%;
+    padding-top: 3%;
+}
+.t{
+   color: #101f264d; 
+   font-size: 15px ;
+   width: 100%;
+}
+.allmsgs{
+border-color: #101F26;    
+color: #101F26;
+border-style: solid;
+    padding: 4% 20%;
+    border-radius: 20px;
+    font-size: 15px;
+}
+.allmsgsfield{
+    background-color: #E7E8EB;
+    width: 100%;
+    margin-top: 3%;
+    border-radius: 30px;
+    height: 600px;
+}
+.msgs-type{
+    display: flex;
+    flex-direction: row;
+    gap: 4%;
+    margin-left: 3%;
+    margin-top: 3%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.tick{
+    width: 20px;
+    height: 20px;
+    border-color: #101F26;
+    border-radius: 5px;
+    border-style: solid;
+}
+.sender-img{
+    width: 5%;
+}
+.sender-name{
+    color: #101F26;
+    font-size: 15px;
+    font-weight: 300;
+}
+.sender-msg{
+    color: #101f2676;
+    font-size: 15px;
+    font-weight: 300;
+}
+.user{
+    border-radius: 20px;
+    border-style: solid;
+    border-color: #101F26;
+    border-width: 1px;
+    padding: 1% 1%;
 }
