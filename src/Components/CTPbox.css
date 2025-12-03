@@ -115,6 +115,7 @@ textarea {
 
   .ctp-box {
     padding: 20px;
+    width: 90%;
   }
 
   /* Stack selection + name fields */
@@ -139,13 +140,13 @@ textarea {
 
   select,
   input {
-    padding: 12px;
-    font-size: 14px;
+        padding: 5px;
+        font-size: 14px;
   }
 
   textarea {
-    height: 80px;
-    padding: 12px;
+            height: 80px;
+        padding: 5px;
   }
 
   .icons {

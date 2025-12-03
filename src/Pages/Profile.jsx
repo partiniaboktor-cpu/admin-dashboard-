@@ -5,6 +5,9 @@ import Nav from '../Components/Nav';
 import Title from '../Components/Title';
 import myimg from '../Images/myimg.png' ;
 import Footer from '../Components/Footer' ;
+import { Link } from "react-router-dom";
+
+
 const Profile = () => {
     return ( <>
     
@@ -16,6 +19,16 @@ const Profile = () => {
 
 <div className='secdiv'>
     <Nav />
+
+<div className='lang'>
+<button className="english">
+  <Link to="/profile">EN</Link>
+</button>
+
+<button className="english">
+  <Link to="/arabicprofile">AR</Link>
+</button>
+</div>
 
 <Title title="Profile" />
 

@@ -1,7 +1,7 @@
 .Table{
     background-color: #E7E8EB;
     margin-top: 3%;
-    height: 560px;
+    height: 580px;
     border-radius: 20px;
 }
 .tops{
@@ -63,7 +63,7 @@
     gap: 8%;
     margin-left: 5%;
 }
-.icons{
+.icons2{
       display: flex;
     /* justify-content: center; */
     align-items: flex-start;
@@ -102,12 +102,10 @@ padding-top: 18%;
 }
 .text4{
     color: #101F26;
-    font-size: 16px;
 padding-top: 50%;
 }
 .text5{
     color: #101F26;
-    font-size: 16px;
 padding-top: 90%;
 }
 .end{
@@ -115,9 +113,10 @@ padding-top: 90%;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    align-content: center;
     margin-left: 5%;
     padding-top: 2%;
-    gap: 35%;
+gap: 35%;
 }
 .previous{
 color: #101F26;
@@ -145,83 +144,83 @@ color: #101F26;
     align-items: center;
     align-content: center;
 }
+/* Base styles remain the same... */
 
-/* ==============================
-   MOBILE RESPONSIVE 
-   Max width: 480px
-============================== */
-@media (max-width: 480px) {
+/* MOBILE RESPONSIVE STYLES */
+@media (max-width: 768px) {
+    .bigdiv {
+        flex-direction: column;
+    }
 
-  .bigdiv {
-    display: block;
-    width: 100%;
-    padding: 0 5px;
-  }
+    .aside {
+        width: 100%;
+        order: 1;
+    }
 
-  .aside {
-    display: none; /* hide sidebar */
-  }
+    .secdiv {
+        width: 100%;
+        order: 2;
+        padding: 0 2%;
+    }
 
-  .secdiv {
-    width: 100%;
-    padding: 0 5%;
-  }
+    .topboxes {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 5%;
+    }
 
-  /* Topboxes stack vertically */
-  .topboxes {
-    flex-direction: column;
-    gap: 15px;
-  }
+    .tops {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 5%;
+        gap: 10px;
+    }
 
-  /* Top action buttons stack */
-  .tops {
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 5%;
-  }
+    .type, .top2 {
+        width: 100%;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
 
-  .type, .top2 {
-    width: 100%;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 5px;
-  }
+    .titleprojects {
+        flex-direction: column;
+        gap: 5%;
+        margin-left: 0;
+    }
 
-  .first, .second {
-    padding: 4% 6%;
-    font-size: 14px;
-  }
+    .typeone {
+        width: 100%;
+    }
 
-  /* Table content stack */
-  .titleprojects, .icons {
-    flex-direction: column;
-    margin-left: 0;
-    gap: 15px;
-  }
+    .text1, .text2, .text3, .text4, .text5 {
+        padding-top: 0; /* Remove huge padding for mobile */
+        margin: 5px 0;
+        font-size: 14px;
+    }
 
-  .typeone {
-    width: 100%;
-    margin-top: 10px;
-  }
+    .icons {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 5%;
+        margin-left: 0;
+        margin-top: 2%;
+    }
 
-  .text1, .text2, .text3, .text4, .text5 {
-    font-size: 14px;
-    padding-top: 10%;
-  }
+    .end {
+        flex-direction: column;
+        gap: 10px;
+        margin-left: 0;
+        padding-top: 5%;
+    }
 
-  .headerproject {
-    font-size: 14px;
-    margin-top: 2%;
-  }
+    .previous, .next {
+        width: 100%;
+        text-align: center;
+    }
 
-  .end {
-    flex-direction: column;
-    gap: 10px;
-    margin-left: 0;
-  }
-
-  .previous, .next {
-    font-size: 14px;
-    padding: 8px 12px;
-  }
+    .Table {
+        height: auto; /* let the table grow dynamically */
+        margin-top: 5%;
+        padding: 5%;
+    }
 }

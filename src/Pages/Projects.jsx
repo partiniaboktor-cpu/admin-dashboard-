@@ -11,6 +11,7 @@ import trash from '../Images/delete.svg' ;
 import Lightbuttons from '../Components/Lightbuttons';
 import Pagenumber from '../Components/Pagenumber';
 import Footer from '../Components/Footer';
+import { Link } from "react-router-dom";
 
 
 const Projects = () => {
@@ -25,6 +26,16 @@ const Projects = () => {
       
       <div className='secdiv'>
         <Nav />
+
+        <div className='lang'>
+        <button className="english">
+          <Link to="/projects">EN</Link>
+        </button>
+        
+        <button className="english">
+          <Link to="/arabicprojects">AR</Link>
+        </button>
+        </div>
  
 <Title title="Overall Projects" />
 
@@ -144,7 +155,7 @@ const Projects = () => {
 <img className='text4' src={state2} alt="state" />
 </div>
 
-<div className='icons'>
+<div className='icons2'>
 
 <div className='typeone'>
 <img className='text5' src={trash} alt="delete" />
@@ -157,6 +168,8 @@ const Projects = () => {
 <img className='text5' src={trash} alt="state" />
 <img className='text5' src={trash} alt="state" />
 </div>
+
+
 
 
 <div className='typeone'>

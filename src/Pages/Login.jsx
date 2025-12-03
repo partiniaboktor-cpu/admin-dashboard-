@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
 import '../Pages/Login.css' ;
 import mylogo from '../Images/mylogo.svg' ;
+import { useNavigate } from "react-router-dom";
+
+
 
 const Login = () => {
+  const navigate = useNavigate();
+
     return ( <>
 
 <div className="login-wrapper">
@@ -23,7 +28,9 @@ const Login = () => {
 
         <p className="forgot">Forgot Password?</p>
 
-        <button className="btn-signin">Sign in</button>
+     <button className="btn-signin" onClick={() => navigate("/Home")}>
+  Sign in
+</button>
 
         <p className="continue">or continue with</p>
 

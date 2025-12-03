@@ -9,6 +9,8 @@ import Darkbutton from '../Components/Darkbutton.jsx';
 import profile from '../Images/profile.svg' ;
 import graph from '../Images/graph.svg' ;
 import Footer from '../Components/Footer.jsx';
+import { Link } from "react-router-dom";
+
 
 const Homedashboard = () => {
     return ( <>
@@ -17,11 +19,24 @@ const Homedashboard = () => {
 
 <div className='aside'>
     <Aside />
+  
 </div>
 
 
 <div className='secdiv'>
 <Nav />
+
+
+<div className='lang'>
+<button className="english">
+  <Link to="/home">EN</Link>
+</button>
+
+<button className="english">
+  <Link to="/arabichome">AR</Link>
+</button>
+</div>
+
 
 <div className='topboxes'>
 <Topbox 

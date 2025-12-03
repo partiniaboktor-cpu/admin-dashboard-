@@ -8,6 +8,9 @@ import myimg from '../Images/myimg.png'
 import trash from '../Images/delete.svg'
 import Pagenumber from '../Components/Pagenumber';
 import Footer from '../Components/Footer';
+import { Link } from "react-router-dom";
+
+
 const Messages = () => {
     return ( <>
     
@@ -19,6 +22,16 @@ const Messages = () => {
 
 <div className='secdiv'>
     <Nav />
+
+<div className='lang'>
+<button className="english">
+  <Link to="/messages">EN</Link>
+</button>
+
+<button className="english">
+  <Link to="/arabicmessages">AR</Link>
+</button>
+</div>
 
 <div className='top-messages'>
 <Title title="Messages" />

@@ -61,7 +61,7 @@
 .center-section {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 5000px;
   flex-wrap: wrap;
 }
 
@@ -129,9 +129,12 @@
   }
 
   .topbar {
-    padding: 10px 15px;
-    border-radius: 25px;
-  }
+  
+        border-radius: 25px;
+        width: calc(100% - 0px);
+    }
+
+
 
   .profile-img {
     width: 40px;

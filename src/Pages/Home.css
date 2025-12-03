@@ -18,6 +18,21 @@
     width: 100%;
     padding: 0 5%;
 }
+.lang{
+  display: flex;
+  flex-direction: row;
+  gap: 1%;
+margin-left: 3%;
+margin-top: 3%;
+}
+.english{
+  width: 4%;
+  height: 35PX;
+  /* background-color: #1B2D35; */
+  color: white;
+  border-style: none;
+  text-decoration: none;
+}
 .topboxes{
     display: flex;
     flex-direction: row;
@@ -183,10 +198,9 @@
   .ab {
     font-size: 16px; /* smaller title */
   }
-
   .shorts,
   .shortss {
-    font-size: 14px; /* smaller text */
+    font-size: 10px; /* smaller text */
   }
 
   /* Graph layout */

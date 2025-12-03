@@ -22,7 +22,7 @@ const Aside = () => {
         </div>
 
         <nav className="menu">
-          <NavLink to="/" className={({isActive}) => isActive ? "menu-item active" : "menu-item"}>
+          <NavLink to="/home" className={({isActive}) => isActive ? "menu-item active" : "menu-item"}>
             <span className="icon">▦</span> Dashboard home
           </NavLink>
 

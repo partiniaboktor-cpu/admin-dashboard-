@@ -22,8 +22,7 @@ const Sidebar = () => {
       </div>
 
       <div className="center-section">
-        <button className="lang-btn">AR</button>
-        <button className="lang-btn">EN</button>
+       
 
         <button className="continue-btn">
           Continue editing last page
