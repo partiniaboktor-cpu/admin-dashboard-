@@ -1,0 +1,99 @@
+.ctp-page {
+  width: 95%;
+  margin: auto;
+  transition: all 0.3s ease;
+}
+
+.ctp-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.ctp-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 3%;
+  flex-wrap: wrap;
+}
+
+.add-btn {
+  background: #0c1e28;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 22px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.small-btn {
+  border: 1px solid #000;
+  padding: 10px 18px;
+  border-radius: 25px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* ============================
+   MOBILE RESPONSIVE 
+   Max width: 480px
+============================ */
+@media (max-width: 480px) {
+
+  /* MAIN LAYOUT */
+  .bigdiv {
+    display: block;
+  }
+
+  .aside {
+    display: none; /* hide sidebar on mobile */
+  }
+
+  .secdiv {
+    width: 100%;
+    padding: 10px;
+  }
+
+  /* NAV */
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  /* PAGE TITLE + ACTIONS */
+  .ctp-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .ctp-actions {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .add-btn,
+  .small-btn {
+    width: 100%;
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  /* CTP PAGE AREA */
+  .ctp-page {
+    width: 100%;
+    padding: 0 5px;
+  }
+
+  /* Optional: Reduce margin between CTP boxes */
+  .ctp-page > * {
+    margin-bottom: 25px;
+  }
+}

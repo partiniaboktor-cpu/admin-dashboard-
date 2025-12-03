@@ -24,3 +24,35 @@
     font-weight: 100;
     padding-bottom: 6%;
 }
+/* ==============================
+   MOBILE RESPONSIVE
+   Max width: 480px
+   ONLY ADDED — DOES NOT MODIFY EXISTING CSS
+============================== */
+@media (max-width: 480px) {
+
+  .box {
+    width: 100%;        /* full width on mobile */
+    margin-top: 20px;   /* small top spacing */
+  }
+
+  .innertitle {
+    font-size: 18px;    /* smaller font */
+    padding-top: 8%;
+    padding-left: 5%;
+  }
+
+  .number {
+    font-size: 20px;
+    padding-top: 2%;
+    padding-left: 5%;
+  }
+
+  .date {
+    font-size: 14px;
+    padding-top: 2%;
+    padding-left: 5%;
+    padding-bottom: 5%;
+  }
+}
+

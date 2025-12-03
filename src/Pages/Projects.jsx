@@ -159,8 +159,6 @@ const Projects = () => {
 </div>
 
 
-
-
 <div className='typeone'>
 <img className='text5' src={edit} alt="state" />
 <img className='text5' src={edit} alt="state" />

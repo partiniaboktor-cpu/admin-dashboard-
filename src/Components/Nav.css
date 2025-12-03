@@ -1,194 +1,166 @@
+/* ----------------- BURGER ----------------- */
+.burger {
+  display: none;
+  font-size: 24px;
+  background: var(--green);
+  border: none;
+  color: var(--dark);
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-right: 10px;
+}
 
+/* ----------------- TOPBAR ----------------- */
 .topbar {
-  width: 100%;
+  width: calc(100% - 40px);
   background: var(--light);
-  padding: 12px 20px;
+  padding: 10px 20px;
   border-radius: 50px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 10px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-  animation: fadeIn 0.7s ease;
-  margin: 0 auto;
-  margin-top: 2%;
-  margin-right: 10%;
-  
+  margin: 20px auto 0 auto;
 }
-/* -------- LEFT SECTION -------- */
-.left-section {
+
+/* Wrap all content for toggling */
+.topbar-content {
   display: flex;
+  flex: 1;
   align-items: center;
-  gap: 15px;
+  justify-content: space-between;
+  gap: 10px;
 }
 
-.profile-img {
-  width: 55px;
-  height: 55px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.text h3 {
-  font-size: 18px;
-  color: var(--dark);
-  margin: 0;
-}
-
-.text p {
-  margin: 0;
-  color: var(--grey);
-  font-size: 13px;
-}
-
-/* -------- CENTER SECTION -------- */
-.center-section {
+/* ---------------- LEFT ---------------- */
+.left-section {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.lang-btn {
-  background: var(--grey);
-  border: none;
-  padding: 6px 12px;
-  border-radius: 8px;
-  font-size: 14px;
-  cursor: pointer;
-}
-
-.continue-btn {
-  padding: 8px 20px;
-  border: 1px solid var(--dark);
-  background: transparent;
-  border-radius: 12px;
-  cursor: pointer;
-  font-size: 15px;
-  transition: 0.3s;
-}
-
-.continue-btn:hover {
-  background: white;
-}
-
-/* -------- RIGHT SECTION -------- */
-.right-section {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.icon-btn {
-  background: var(--light);
+.profile-img {
   width: 45px;
   height: 45px;
   border-radius: 50%;
+  object-fit: cover;
+}
+
+.text h3 {
+  font-size: 16px;
+  margin: 0;
+}
+
+.text p {
+  font-size: 12px;
+  margin: 0;
+}
+
+/* ---------------- CENTER ---------------- */
+.center-section {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.lang-btn {
+  padding: 4px 8px;
+  border-radius: 6px;
   border: none;
-  font-size: 20px;
   cursor: pointer;
+  font-size: 12px;
+}
+
+.continue-btn {
+  padding: 6px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--dark);
+  background: transparent;
+  cursor: pointer;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+/* ---------------- RIGHT ---------------- */
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon-btn {
+  width: 35px;
+  height: 35px;
+  font-size: 16px;
+  border-radius: 50%;
+  border: none;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-}
-
-.notify-wrapper {
-  position: relative;
+  cursor: pointer;
 }
 
 .notify-dot {
   position: absolute;
-  top: -3px;
-  right: -3px;
-  background: #ff3b3b;
-  color: white;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  font-size: 12px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  top: -2px;
+  right: -2px;
+  width: 14px;
+  height: 14px;
+  font-size: 9px;
 }
 
-/* -------- ANIMATION -------- */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-
+/* ---------------- MOBILE ---------------- */
 @media (max-width: 480px) {
-  .sidebar {
-    width: 70px;
-    padding: 20px 10px;
-    border-radius: 0 25px 25px 0;
+  .burger {
+    display: block;
   }
 
-  .sidebar-logo h4,
-  .text,
-  .menu-item span:not(.icon) {
-    display: none; /* hide text */
-  }
-
-  .menu-item {
-    justify-content: center;
-    padding: 12px 0;
-  }
-
-  .menu-item .icon {
-    font-size: 22px;
-    opacity: 1;
-  }
-
-  .layout .main-content {
-    margin-left: 70px !important; /* content shifts */
-    width: calc(100% - 70px);
-  }
-}
-
-
-
-
-/* ----------- MOBILE (smallest screens) ----------- */
-@media (max-width: 480px) {
-  .topbar {
+  .topbar-content {
+    display: none; /* hide content by default */
     flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
-    padding: 18px;
+    width: 100%;
+    gap: 8px;
+  }
+
+  .topbar-content.open {
+    display: flex; /* show when burger clicked */
+  }
+
+  .topbar {
+    padding: 10px 15px;
     border-radius: 25px;
   }
 
-  .left-section {
-    width: 100%;
-  }
-
-  .center-section {
-    width: 100%;
-    justify-content: space-between;
-  }
-
-  .continue-btn {
-    width: 100%;
-    text-align: center;
-  }
-
-  .right-section {
-    width: 100%;
-    justify-content: flex-end;
-    gap: 15px;
-  }
-
   .profile-img {
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
   }
 
   .text h3 {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   .text p {
-    font-size: 12px;
+    font-size: 10px;
+  }
+
+  .lang-btn,
+  .continue-btn {
+    font-size: 11px;
+    padding: 4px 8px;
+  }
+
+  .icon-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+
+  .notify-dot {
+    width: 12px;
+    height: 12px;
+    font-size: 8px;
   }
 }

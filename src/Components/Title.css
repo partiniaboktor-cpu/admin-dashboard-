@@ -1,5 +1,14 @@
-.title{
+.title {
     color: #577D8F;
     padding-top: 3%;
-font-size: 32px;
+    font-size: 32px;
+    transition: font-size 0.3s ease; /* smooth resizing */
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 480px) {
+    .title {
+        font-size: 24px; /* smaller font for mobile */
+        padding-top: 2%;
+    }
 }

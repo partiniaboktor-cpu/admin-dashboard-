@@ -104,3 +104,44 @@
     transform: translateY(0);
   }
 }
+/* ---------------- BURGER MENU ---------------- */
+.burger {
+  display: none;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  font-size: 30px;
+  background: var(--light);
+  color: var(--dark);
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  z-index: 999;
+  transition: 0.3s;
+}
+
+.burger:hover {
+  opacity: 0.8;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    left: -300px; /* hide sidebar by default */
+    top: 0;
+    width: 260px;
+    height: 100vh;
+    transition: 0.3s;
+    z-index: 998;
+  }
+
+  .sidebar.open {
+    left: 0; /* show sidebar when open */
+  }
+
+  .burger {
+    display: block; /* show burger button */
+  }
+}

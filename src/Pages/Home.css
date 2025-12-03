@@ -97,3 +97,106 @@
     justify-content: flex-start;
     gap: 3%;
 }
+
+/* ==============================
+   MOBILE RESPONSIVE 
+   Max width: 480px
+============================== */
+@media (max-width: 480px) {
+
+  /* MAIN LAYOUT */
+  .bigdiv {
+    display: block; /* stack aside + main content */
+    width: 100%;
+    padding: 0 3px; /* smaller padding */
+  }
+
+  .aside {
+    display: none; /* hide sidebar */
+  }
+
+  .secdiv {
+    width: 100%;
+    padding: 0 3%;
+  }
+
+  /* Topboxes stack vertically */
+  .topboxes {
+    flex-direction: column;
+    gap: 10px; /* smaller gap */
+  }
+
+  .topboxes > div {
+    width: 100%; /* full width */
+  }
+
+  /* Quick action buttons stack */
+  .butns {
+    flex-direction: column;
+    gap: 8px; /* smaller gap */
+  }
+
+  .butns button,
+  .Darkbutton button,
+  .Lightbuttons button {
+    width: 100%;
+    font-size: 13px; /* smaller font */
+    padding: 8px; /* smaller padding */
+  }
+
+  /* Topboxes + secbox */
+  .topboxess {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .topboxess > div {
+    width: 100%; /* full width */
+  }
+
+  .secbox {
+    width: 100%; /* full width */
+    margin-top: 15px; /* smaller margin */
+    padding: 10px; /* smaller padding */
+  }
+
+  /* Sections inside secbox */
+  .part1,
+  .part11 {
+    flex-direction: column;
+    gap: 5px; /* smaller gap */
+    padding-left: 0;
+    padding-top: 5px;
+  }
+
+  .part2,
+  .part22 {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px; /* smaller gap */
+    padding-left: 0;
+    padding-top: 5px;
+    line-height: 22px; /* slightly tighter line height */
+  }
+
+  /* Text sizes */
+  .ab {
+    font-size: 16px; /* smaller title */
+  }
+
+  .shorts,
+  .shortss {
+    font-size: 14px; /* smaller text */
+  }
+
+  /* Graph layout */
+  .graph {
+    flex-direction: column;
+    gap: 8px; /* smaller gap */
+  }
+
+  .graph img {
+    width: 100%;
+    height: auto;
+  }
+}
