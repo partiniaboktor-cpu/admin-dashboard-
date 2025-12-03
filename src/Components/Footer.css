@@ -11,3 +11,22 @@
     font-weight: 100;
  
 }
+
+/* ==============================
+   MOBILE RESPONSIVE 
+   Max width: 480px
+============================== */
+@media (max-width: 480px) {
+
+  .foot {
+    flex-direction: column; /* stack items vertically */
+    align-items: center; /* center the text */
+    gap: 5px; /* smaller gap between items */
+    padding-top: 10px; /* reduce top padding */
+  }
+
+  .name {
+    font-size: 12px; /* smaller font for mobile */
+    text-align: center; /* ensure centered text */
+  }
+}

@@ -1,94 +1,183 @@
-.myimg{
-    width: 10%;
+/* Base styles */
+.bigdiv {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    min-height: 100vh;
 }
-.myimgs{
+
+.aside {
+    width: 250px; /* sidebar width */
+    min-width: 200px;
+}
+
+.secdiv {
+    flex: 1;
+    padding: 2% 5%;
+}
+
+.myimg {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.myimgs {
     display: flex;
     align-items: center;
-    flex-direction: row;
-    margin-top: 5%;
-    gap: 4%;
+    gap: 20px;
+    margin-top: 30px;
+    flex-wrap: wrap;
 }
-.new{
-    background-color: rgba(240, 248, 255, 0);
+
+.new {
+    background-color: transparent;
     color: #101F26;
-    border-color: #101F26;
-    border-style: solid;
+    border: 1px solid #101F26;
     border-radius: 30px;
-    font-size: 18px;
-    padding: 1.5% 2%;
-    border-width: 1px;
+    font-size: 16px;
+    padding: 8px 15px;
+    cursor: pointer;
 }
-.size{
+
+.size {
     color: #101f261f;
-    font-size: 10px;
-    margin-top: 3%;
+    font-size: 12px;
+    margin-top: 10px;
 }
-.line{
-    width: 80%;
-    border-color: #101F26;
-    margin-top: 5%;
-}
-.hold{
+
+.line {
     width: 100%;
-    margin-top: 5%;
+    border-color: #101F26;
+    margin: 20px 0;
+}
+
+.hold {
+    width: 100%;
+    margin-top: 20px;
     background-color: #E7E8EB;
-    border-radius: 30px;
-    height: 230px;
-    
+    border-radius: 20px;
+    padding: 20px 10px;
+    box-sizing: border-box;
 }
-.personal-box{
+
+.personal-box {
     display: flex;
-    flex-direction: row;
-    gap: 60%;
-    margin-left: 3%;
-    margin-top: 3%;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
 }
-.personal{
+
+.personal {
     color: #577D8F;
+    font-size: 18px;
 }
-.edits{
+
+.edits {
     background-color: #101F26;
     color: white;
-    padding: 1% 3%;
+    padding: 6px 12px;
     border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
 }
-.three{
+
+.three {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 6%;
-    margin-left: 3%;
-    margin-top: 3%;
+    gap: 20px;
+    flex-wrap: wrap;
 }
-.firstone{
+
+.firstone {
     display: flex;
     flex-direction: column;
+    min-width: 120px;
 }
-.full-name{
+
+.full-name {
     color: #101F26;
+    font-weight: 600;
 }
-.names{
+
+.names {
     color: #101f263c;
     font-weight: 100;
-    margin-top: 10%;
+    margin-top: 5px;
 }
-.namess{
+
+.namess {
     color: #101f263c;
     font-weight: 100;
-    margin-top: 2%;
-    padding: 0 3%;
-    line-height: 30px;
+    line-height: 1.6;
+    margin-top: 5px;
 }
-.cairo{
+
+.cairo {
     background-color: #FAFAFB;
-    border-color: #101F26;
-    border-style: solid;
-    width: 90%;
-    border-radius: 20px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    margin-left: 3%;
-    margin-top: 3%;
-    padding-left: 3%;
+    border: 1px solid #101F26;
+    border-radius: 10px;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 10px;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 1024px) {
+    .bigdiv {
+        flex-direction: column;
+    }
+    .aside {
+        width: 100%;
+    }
+    .secdiv {
+        width: 100%;
+        padding: 2% 3%;
+    }
+    .myimg {
+        width: 120px;
+        height: 120px;
+    }
+    .three {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .myimg {
+        width: 150px;
+        height: 150px;
+    }
+    .personal-box {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .edits {
+        align-self: flex-end;
+        font-size: 13px;
+        padding: 5px 10px;
+    }
+    .namess {
+        line-height: 1.4;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .myimg {
+        width: 120px;
+        height: 120px;
+    }
+    .new {
+        font-size: 14px;
+        padding: 5px 10px;
+    }
+    .personal-box h2 {
+        font-size: 16px;
+    }
+    .three {
+        gap: 5px;
+    }
 }
