@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import React, { Component } from 'react';
 import '../Pages/Messages.css' ;
 import Aside from '../Components/Aside';
@@ -8,7 +9,6 @@ import myimg from '../Images/myimg.png'
 import trash from '../Images/delete.svg'
 import Pagenumber from '../Components/Pagenumber';
 import Footer from '../Components/Footer';
-import { Link } from "react-router-dom";
 
 
 const Messages = () => {
@@ -71,7 +71,9 @@ const Messages = () => {
 <div className='msgs-type'>
 <div className='tick'></div>
 <img className='sender-img' src={myimg} alt="sender image" />
-<h4 className='sender-name'>Partinia Boktor</h4>
+<Link to="/messagedetail" className="sender-name">
+  Ramez Raouf
+</Link>
 <button className='user'>User testing</button>
 <p className='sender-msg'>Hi partinia , We need to do user testing by Monday ,<br></br> Please add  me in project group </p>
 <img src={trash} alt="" />
@@ -83,7 +85,9 @@ const Messages = () => {
 <div className='msgs-type'>
 <div className='tick'></div>
 <img className='sender-img' src={myimg} alt="sender image" />
-<h4 className='sender-name'>Partinia Boktor</h4>
+<Link to="/messagedetail" className="sender-name">
+  Ramez Raouf
+</Link>
 <button className='user'>User testing</button>
 <p className='sender-msg'>Hi partinia , We need to do user testing by Monday ,<br></br> Please add  me in project group </p>
 <img src={trash} alt="" />
@@ -94,7 +98,9 @@ const Messages = () => {
 <div className='msgs-type'>
 <div className='tick'></div>
 <img className='sender-img' src={myimg} alt="sender image" />
-<h4 className='sender-name'>Partinia Boktor</h4>
+<Link to="/messagedetail" className="sender-name">
+  Ramez Raouf
+</Link>
 <button className='user'>User testing</button>
 <p className='sender-msg'>Hi partinia , We need to do user testing by Monday ,<br></br> Please add  me in project group </p>
 <img src={trash} alt="" />
@@ -105,19 +111,9 @@ const Messages = () => {
 <div className='msgs-type'>
 <div className='tick'></div>
 <img className='sender-img' src={myimg} alt="sender image" />
-<h4 className='sender-name'>Partinia Boktor</h4>
-<button className='user'>User testing</button>
-<p className='sender-msg'>Hi partinia , We need to do user testing by Monday ,<br></br> Please add  me in project group </p>
-<img src={trash} alt="" />
-</div>
-
-
-
-
-<div className='msgs-type'>
-<div className='tick'></div>
-<img className='sender-img' src={myimg} alt="sender image" />
-<h4 className='sender-name'>Partinia Boktor</h4>
+<Link to="/messagedetail" className="sender-name">
+  Ramez Raouf
+</Link>
 <button className='user'>User testing</button>
 <p className='sender-msg'>Hi partinia , We need to do user testing by Monday ,<br></br> Please add  me in project group </p>
 <img src={trash} alt="" />
@@ -129,7 +125,23 @@ const Messages = () => {
 <div className='msgs-type'>
 <div className='tick'></div>
 <img className='sender-img' src={myimg} alt="sender image" />
-<h4 className='sender-name'>Partinia Boktor</h4>
+<Link to="/messagedetail" className="sender-name">
+  Ramez Raouf
+</Link>
+<button className='user'>User testing</button>
+<p className='sender-msg'>Hi partinia , We need to do user testing by Monday ,<br></br> Please add  me in project group </p>
+<img src={trash} alt="" />
+</div>
+
+
+
+
+<div className='msgs-type'>
+<div className='tick'></div>
+<img className='sender-img' src={myimg} alt="sender image" />
+<Link to="/messagedetail" className="sender-name">
+  Ramez Raouf
+</Link>
 <button className='user'>User testing</button>
 <p className='sender-msg'>Hi partinia , We need to do user testing by Monday ,<br></br> Please add  me in project group </p>
 <img src={trash} alt="" />
@@ -140,17 +152,20 @@ const Messages = () => {
 <div className='msgs-type'>
 <div className='tick'></div>
 <img className='sender-img' src={myimg} alt="sender image" />
-<h4 className='sender-name'>Partinia Boktor</h4>
+<Link to="/messagedetail" className="sender-name">
+  Ramez Raouf
+</Link>
 <button className='user'>User testing</button>
 <p className='sender-msg'>Hi partinia , We need to do user testing by Monday ,<br></br> Please add  me in project group </p>
 <img src={trash} alt="" />
 </div>
 
-<div className='end'>
-    <button className='previous'>Previous</button>
-    <Pagenumber title="Page 1 of 10" />
-     <button className='next'>Next</button>
-</div>
+<div className="pagination">
+        <button className="page-btn">Previous</button>
+        <p>Page 1 of 10</p>
+        <button className="page-btn dark">Next</button>
+      </div>
+
 
 </div>
 <Footer />

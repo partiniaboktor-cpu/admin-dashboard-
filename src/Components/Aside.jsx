@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import logo from "../Images/mylogo.svg";
@@ -17,7 +18,9 @@ const Aside = () => {
 
       <div className={`sidebar ${isOpen ? 'open' : ''}`}>
         <div className="sidebar-logo">
-          <img src={logo} alt="logo" />
+          <Link to="/">
+  <img src={logo} alt="logo" />
+</Link>
           <h4>Partinia Boktor</h4>
         </div>
 

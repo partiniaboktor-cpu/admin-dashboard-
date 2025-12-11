@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+import { useState } from "react";
 import React, { Component } from 'react';
 import Aside from '../Components/Aside';
 import Nav from '../Components/Nav';
@@ -11,10 +13,36 @@ import trash from '../Images/delete.svg' ;
 import Lightbuttons from '../Components/Lightbuttons';
 import Pagenumber from '../Components/Pagenumber';
 import Footer from '../Components/Footer';
-import { Link } from "react-router-dom";
+
 
 
 const Projects = () => {
+
+  const data = [
+    { name: "ecommerce", views: "43 views", date: "11/12/22", state: false },
+    { name: "Brand Match", views: "45 views", date: "21/12/22", state: true },
+    { name: "Kids toys", views: "50 views", date: "5/12/22", state: true },
+    { name: "Candles", views: "30 views", date: "8/12/22", state: false },
+    { name: "Maintanince", views: "120 views", date: "9/1/23", state: false },
+    { name: "Furniture", views: "80 views", date: "9/1/23", state: true },
+    { name: "Travel agency", views: "550 views", date: "15/12/23", state: false },
+    { name: "Custom shop", views: "250 views", date: "6/6/23", state: true },
+    { name: "Offering page", views: "1.2k views", date: "11/11/22", state: true },
+  ];
+
+const [open, setOpen] = useState(false);
+  const [selected, setSelected] = useState("UX/UI Designs");
+
+  const items = [
+    "Photography",
+    "Graphic design",
+    "Web development"
+  ];
+
+  const handleSelect = (item) => {
+    setSelected(item);
+    setOpen(false);
+  };
 
     return ( <>
     
@@ -67,135 +95,99 @@ const Projects = () => {
 
 <Title title=" Projects" />
 
-<div className='Table'>
+ <div className="table-container">
 
-<div className='tops'>
+      {/* HEADER ACTIONS */}
+     <div className="top-bar">
+<div className="dropdown-wrapper">
+      <button
+        className="dropdown-btn"
+        onClick={() => setOpen(!open)}
+      >
+        {selected} ▼
+      </button>
 
-    <div className='type'>
-    <h3 className='first'>UX/UI designs </h3>
+      {open && (
+        <div className="dropdown-menu">
+          {items.map((item) => (
+            <div
+              key={item}
+              className="dropdown-item"
+              onClick={() => handleSelect(item)}
+            >
+              {item}
+            </div>
+          ))}
+        </div>
+      )}
     </div>
-    
-    <div className='top2'>
-    <h3 className='second'>+ Add project </h3>
-    <h3 className='first'>Search </h3>
-    <h3 className='first'>Filters</h3>
-    <h3 className='first'>Download all</h3>
+
+
+<Link className='nes' to="/newproject">
+  <h3 className='add-btn'>+ Add project</h3>
+</Link>
+
+
+  <div className="action-btn">
+    Search
+  </div>
+
+  <div className="action-btn">
+    Filters
+  </div>
+
+  <div className="action-btn">Download all</div>
+</div>
+
+      {/* TABLE */}
+      <table className="project-table">
+        <thead>
+          <tr>
+            <th>Projects ▼</th>
+            <th>Projects</th>
+            <th>Views</th>
+            <th>Date published</th>
+            <th>State</th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {data.map((row, i) => (
+            <tr key={i}>
+              <td>{row.name}</td>
+              <td>{row.name}</td>
+              <td>{row.views}</td>
+              <td>{row.date}</td>
+
+              {/* Toggle Switch */}
+              <td>
+                <label className="switch">
+                  <input type="checkbox" defaultChecked={row.state} />
+                  <span className="slider"></span>
+                </label>
+              </td>
+
+          <td className="icons22">
+  <button className="icon-btn">Delete</button>
+  <Link className='nes' to="/editprojects">
+  <h3 className='icon-btn'>Edit</h3>
+</Link>
+</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
+      {/* PAGINATION */}
+      <div className="pagination">
+        <button className="page-btn">Previous</button>
+        <p>Page 1 of 10</p>
+        <button className="page-btn dark">Next</button>
+      </div>
     </div>
 
-</div>
 
-<div className='titleprojects'>
-
-<div className='typeone'>
-<h3 className='headerproject'>Projects</h3>
-<p className='text1'>Ecommerce</p>
-<p className='text1'>Brand Match</p>
-<p className='text1'>Kids toys</p>
-<p className='text1'>Candles</p>
-<p className='text1'>Maintaince</p>
-<p className='text1'>Furniture</p>
-<p className='text1'>Travel agency</p>
-<p className='text1'>Custom shop</p>
-<p className='text1'>Offering page</p>
-</div>
-
-
-<div className='typeone'>
-<h3 className='headerproject'>Projects</h3>
-<p className='text1'>Ecommerce</p>
-<p className='text1'>Brand Match</p>
-<p className='text1'>Kids toys</p>
-<p className='text1'>Candles</p>
-<p className='text1'>Maintaince</p>
-<p className='text1'>Furniture</p>
-<p className='text1'>Travel agency</p>
-<p className='text1'>Custom shop</p>
-<p className='text1'>Offering page</p>
-</div>
-
-
-<div className='typeone'>
-<h3 className='headerproject'>Views</h3>
-<p className='text2'>43 views</p>
-<p className='text2'>45 views</p>
-<p className='text2'>50 views</p>
-<p className='text2'>30 views</p>
-<p className='text2'>120 views</p>
-<p className='text2'>80 views</p>
-<p className='text2'>550 views</p>
-<p className='text2'>250 views</p>
-<p className='text2'>1.2k views</p>
-</div>
-
-
-<div className='typeone'>
-<h3 className='headerproject'>Date published</h3>
-<p className='text3'>11/12/22</p>
-<p className='text3'>21/12/22</p>
-<p className='text3'>5/12/22</p>
-<p className='text3'>8/12/22</p>
-<p className='text3'>9/1/23</p>
-<p className='text3'>9/1/23</p>
-<p className='text3'>15/12/23</p>
-<p className='text3'>6/6/23</p>
-<p className='text3'>11/11/22</p>
-</div>
-
-
-<div className='typeone'>
-<h3 className='headerproject'>State</h3>
-<img className='text4' src={state1} alt="state" />
-<img className='text4' src={state2} alt="state" />
-<img className='text4' src={state1} alt="state" />
-<img className='text4' src={state2} alt="state" />
-<img className='text4' src={state1} alt="state" />
-<img className='text4' src={state1} alt="state" />
-<img className='text4' src={state2} alt="state" />
-<img className='text4' src={state1} alt="state" />
-<img className='text4' src={state2} alt="state" />
-</div>
-
-<div className='icons2'>
-
-<div className='typeone'>
-<img className='text5' src={trash} alt="delete" />
-<img className='text5' src={trash} alt="state" />
-<img className='text5' src={trash} alt="state" />
-<img className='text5' src={trash} alt="state" />
-<img className='text5' src={trash} alt="state" />
-<img className='text5' src={trash} alt="state" />
-<img className='text5' src={trash} alt="state" />
-<img className='text5' src={trash} alt="state" />
-<img className='text5' src={trash} alt="state" />
-</div>
-
-
-
-
-<div className='typeone'>
-<img className='text5' src={edit} alt="state" />
-<img className='text5' src={edit} alt="state" />
-<img className='text5' src={edit} alt="state" />
-<img className='text5' src={edit} alt="state" />
-<img className='text5' src={edit} alt="state" />
-<img className='text5' src={edit} alt="state" />
-<img className='text5' src={edit} alt="state" />
-<img className='text5' src={edit} alt="state" />
-<img className='text5' src={edit} alt="state" />
-</div>
-</div>
-
-
-</div>
-
-<div className='end'>
-    <button className='previous'>Previous</button>
-    <Pagenumber title="Page 1 of 10" />
-     <button className='next'>Next</button>
-</div>
-
-
-</div>
 <Footer />
 
       </div>

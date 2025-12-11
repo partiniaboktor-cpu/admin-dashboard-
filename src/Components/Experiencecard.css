@@ -1,0 +1,95 @@
+.experience-card {
+  width: 90%;
+  max-width: 1100px;
+  background: #e9eaec;
+  border-radius: 40px;
+  padding: 40px;
+  position: relative;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.25);
+  margin: auto;
+  margin-top: 3%;
+}
+
+/* Edit Button */
+.edit-btn-top {
+  position: absolute;
+  top: 25px;
+  right: 30px;
+  background: transparent;
+  border: 2px solid #101820;
+  border-radius: 30px;
+  padding: 10px 24px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Grid */
+.top-row {
+  display: flex;
+  gap: 60px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.field.full {
+  margin-top: 25px;
+}
+
+label {
+  font-size: 22px;
+  font-weight: 600;
+  color: #101820;
+}
+
+/* Dropdown Fields */
+.select-box {
+  height: 55px;
+  background: #c9cccf;
+  border-radius: 12px;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  color: #555;
+}
+
+/* Input */
+.input-box {
+  height: 55px;
+  background: #c9cccf;
+  border-radius: 12px;
+}
+
+/* Textarea */
+.textarea-box {
+  min-height: 160px;
+  background: #c9cccf;
+  border-radius: 14px;
+  padding: 20px;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #777;
+}
+
+/* Delete Button */
+.delete-btn {
+  margin-top: 30px;
+  margin-left: auto;
+  display: block;
+  background: #101820;
+  color: white;
+  border: none;
+  border-radius: 40px;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+}

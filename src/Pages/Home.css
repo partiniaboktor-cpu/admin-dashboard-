@@ -42,7 +42,9 @@ margin-top: 3%;
 .butns{
     display: flex;
     flex-direction: row;
-    gap: 5%;
+    gap: 8%;
+    display: flex;
+    text-align: center;
 }
 .topboxess{
     display: flex;

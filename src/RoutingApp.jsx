@@ -12,6 +12,10 @@ import MessagesAR from './Pages/MessagesAR';
 import ProfileAR from './Pages/ProfileAR';
 import CategoriesAR from './Pages/CategoriesAR';
 import ProjectsAR from './Pages/ProjectsAR';
+import Skills from './Pages/Skills';
+import Messagedetail from './Pages/Messagedetail';
+import Settings from './Pages/Settings';
+import Newproject from './Pages/Newproject';
 
 
 const RoutingApp = () => {
@@ -31,6 +35,10 @@ const RoutingApp = () => {
         <Route path='/arabicprofile' element={<ProfileAR />} />
         <Route path='/arabiccategory' element={<CategoriesAR />} />
         <Route path='/arabicprojects' element={<ProjectsAR />} />
+        <Route path='/Skills' element={<Skills />} />
+        <Route path='/messagedetail' element={<Messagedetail />} />
+        <Route path='/settings' element={<Settings />} />
+        <Route path='/newproject' element={<Newproject />} />
 
     
       </Routes>

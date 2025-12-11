@@ -6,6 +6,8 @@ import Title from '../Components/Title';
 import one from '../Images/one.png';
 import upload from '../Images/upload.svg';
 import Smalltitle from '../Components/Smalltitle';
+import Footer from '../Components/Footer';
+
 
 const Editproject = () => {
     return ( <>
@@ -19,63 +21,113 @@ const Editproject = () => {
 <div className='secdiv'>
 <Nav />
 
-<div className='alledits'>
 
-<div className='left-box'>
-    <div className='leftm'>
-    <Title title="Project image" />
-<div className='pic-btn'>
-    <img src={one} alt="one" />
-    <div className='edit-type'>
-    <button className='replace'>Replace</button>
-    <button className='remove'>Remove</button>
-    </div>
-</div>
-<div className='upload'>
-    <img src={upload} alt="upload" />
-      <button className='add'>Add another image</button>
-</div>
-    </div>
-</div>
+<div className="project-editors">
 
-<div className='right-box'>
-   <div className='leftm'>
-    <Title title="Project image" />
+      {/* ---- LEFT: IMAGE CARD ---- */}
+      <div className="project-image-cards">
+        <h3>Project Image</h3>
 
-<div className='fields'>
+        <div className="project-img-wrappers">
+          <img
+            src={one} // replace with your image
+            alt="project"
+            className="project-img"
+          />
+        </div>
 
- <Smalltitle title="Project name" />
- <div className='empty-box'>
- <div className='only-box'></div>
-</div>
+        <div className="project-image-actionss">
+          <button className="replace-btns">Replace</button>
+          <button className="remove-btns">Remove</button>
+        </div>
 
- <Smalltitle title="Description" />
-  <div className='empty-box'>
- <div className='only-box'></div>
-</div>
-</div>
+       <div className="upload-box"></div>
 
+      </div>
 
-<div className='two-fields'>
- <Smalltitle title="Description" />
-  <div className='empty-box'>
+      {/* ---- RIGHT: FORM CARD ---- */}
+      <div className="project-info-cards">
+        <h3>Project information</h3>
 
-</div>
+        <div className="form-grids">
 
- <Smalltitle title="Description" />
-  <div className='empty-box'>
- 
-</div>
+          <input className="input-fields full" placeholder="Project name" />
+
+          <textarea className="input-fields full textarea" placeholder="Description" />
+
+          <input className="input-fields" placeholder="Time frame" />
+
+          <input className="input-fields" placeholder="Tools" />
+
+          <input className="input-fields" placeholder="My role" />
+
+          <div className="upload-box"></div>
 
 
+          <div className="upload-box"></div>
 
-</div>
 
+        </div>
 
+        <button className="save-btns">Save changes</button>
+      </div>
 
     </div>
+
+
+
+<Title title="SEO & Content Optimization" />
+
+
+<div className="seo-container">
+<div className="seo-header">
+<h2>Page &lt;title&gt; Tag</h2>
+</div>
+
+
+<div className="seo-row">
+<div className="seo-field">
+<labelss>Category</labelss>
+<select>
+<option>Category</option>
+</select>
+</div>
+
+
+<div className="seo-field">
+<labelss>URL Name</labelss>
+<div className="input-wrapper">
+<input type="text" placeholder="Link" />
+<span className="edit-icons">✏️</span>
 </div>
 </div>
+
+
+</div>
+
+
+<div className="seo-section">
+<labelss>Meta Description</labelss>
+<textarea placeholder=""></textarea>
+</div>
+
+
+<div className="seo-section">
+<labelss>Image Optimization</labelss>
+<div className="image-upload-box">
+<p>Drag image here</p>
+<span>or</span>
+<p className="browse">Browse image</p>
+</div>
+</div>
+
+
+<button className="delete-btn">Delete SEO</button>
+</div>
+
+
+<Footer />
+
 </div>
     </div>
     </> );
