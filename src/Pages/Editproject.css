@@ -260,3 +260,102 @@
   margin-bottom: 25px;
   cursor:
 }
+
+/* ----------------------------- */
+/*  RESPONSIVE FOR MOBILE (≤768) */
+/* ----------------------------- */
+
+@media (max-width: 768px) {
+
+  /* MAIN LAYOUT */
+  .container4 {
+    flex-direction: column;
+    padding: 10px;
+    gap: 20px;
+  }
+
+  /* LEFT BOX */
+  .imageBox4 {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .projectImg4 {
+    width: 95%;
+  }
+
+  .addImageBtn4 {
+    padding: 14px;
+    border-radius: 20px;
+  }
+
+  /* RIGHT BOX */
+  .infoBox4 {
+       width: 95%;
+    padding: 20px;
+  }
+
+  .formGrid4 {
+    gap: 12px;
+  }
+
+  .input4,
+  .textarea4 {
+      width: 95%;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  /* STACK ROWS */
+  .row4 {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .uploadBox4,
+  .visualUpload4 {
+      width: 95%;
+  }
+
+  .saveBtn4 {
+    padding: 14px;
+    font-size: 16px;
+  }
+
+  /* SEO SECTION */
+  .seoContainer5 {
+       width: 95%;
+    padding: 20px;
+  }
+
+  .editBtn5 {
+    top: 12px;
+    right: 15px;
+    padding: 4px 12px;
+    font-size: 12px;
+  }
+
+  /* SEO ROW */
+  .row5 {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .textarea5 {
+    height: 120px;
+    font-size: 14px;
+    width: 95%;
+  }
+
+  .imageUpload5 {
+    height: 140px;
+  }
+  .urlInput5 {
+  width: 95%;
+  padding: 12px;
+  border-radius: 10px;
+  background: #bfc5c9;
+  border: none;
+  font-size: 14px;
+}
+}

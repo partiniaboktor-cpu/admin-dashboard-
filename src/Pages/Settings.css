@@ -150,3 +150,64 @@
   width: 100%;
   margin-top: 25px;
 }
+
+/* ------------------------------------------------ */
+/* RESPONSIVE — Mobile (max-width: 768px)           */
+/* ------------------------------------------------ */
+
+@media (max-width: 768px) {
+
+  .settings-container {
+    width: 95%;
+    padding: 20px;
+    margin: 20px auto;
+  }
+
+  .tabs {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+    width: 95%;
+  }
+
+  .settings-content {
+    flex-direction: column;
+    gap: 20px;
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  .profile-section,
+  .password-section {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .input-field22 {
+    width: 95%;
+  }
+
+  .upload-box {
+    width: 95%;
+    margin: 0 auto 20px auto;
+  }
+
+  .button-row {
+    width: 95%;
+    margin: 20px auto;
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .password-section {
+    max-width: 95%;
+  }
+
+  .btn.update {
+    width: 95%;
+    margin: 20px auto 0;
+  }
+}
