@@ -19,8 +19,8 @@ const Aside = () => {
       <div className={`sidebar ${isOpen ? 'open' : ''}`}>
         <div className="sidebar-logo">
           <Link to="/">
-  <img src={logo} alt="logo" />
-</Link>
+            <img src={logo} alt="logo" />
+          </Link>
           <h4>Partinia Boktor</h4>
         </div>
 

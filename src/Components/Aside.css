@@ -7,6 +7,7 @@
 }
 
 /* ---------------- SIDEBAR WRAPPER ---------------- */
+/* Desktop Default: Always visible, on the left */
 .sidebar {
   position: fixed;
   top: 0;
@@ -16,8 +17,8 @@
   background: var(--dark);
   padding: 30px 20px;
   border-radius: 0 35px 35px 0;
-  animation: slideIn 0.7s ease forwards;
   overflow-y: auto;
+  transition: left 0.3s ease; /* Added transition for mobile slide */
 }
 
 /* Scrollbar hidden */
@@ -64,6 +65,7 @@
   cursor: pointer;
   transition: 0.25s ease;
   text-align: left;
+  text-decoration: none; /* Ensure links don't have underlines */
 }
 
 .menu-item .icon {
@@ -82,18 +84,7 @@
   font-weight: 600;
 }
 
-/* ---------------- ANIMATIONS ---------------- */
-@keyframes slideIn {
-  from {
-    transform: translateX(-100px);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
+/* ---------------- ANIMATIONS (Kept fadeIn for logo) ---------------- */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -104,6 +95,7 @@
     transform: translateY(0);
   }
 }
+
 /* ---------------- BURGER MENU ---------------- */
 .burger {
   display: none;
@@ -121,27 +113,17 @@
   transition: 0.3s;
 }
 
-.burger:hover {
-  opacity: 0.8;
-}
-
-/* ---------------- RESPONSIVE ---------------- */
 @media (max-width: 768px) {
   .sidebar {
-    position: fixed;
-    left: -300px; /* hide sidebar by default */
-    top: 0;
-    width: 260px;
-    height: 100vh;
-    transition: 0.3s;
+    left: -300px;
     z-index: 998;
   }
 
   .sidebar.open {
-    left: 0; /* show sidebar when open */
+    left: 0;
   }
 
   .burger {
-    display: block; /* show burger button */
+    display: block; /* NOW IT WORKS */
   }
 }

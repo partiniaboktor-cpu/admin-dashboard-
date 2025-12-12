@@ -111,38 +111,30 @@
   font-size: 9px;
 }
 
-/* ------------------------------------------------ */
-/* ------------- RESPONSIVE — 768px ---------------- */
-/* ------------------------------------------------ */
-
-@media (max-width: 768px) {
-  
+/* ---------------- MOBILE ---------------- */
+@media (max-width: 480px) {
   .burger {
     display: block;
   }
 
-  .topbar {
-    width: 95%;
-    border-radius: 25px;
-    padding: 12px 20px;
-  }
-
   .topbar-content {
-    display: none; 
+    display: none; /* hide content by default */
     flex-direction: column;
-    align-items: flex-start;
-    width: 95%;
-    gap: 10px;
+    width: 100%;
+    gap: 8px;
   }
 
   .topbar-content.open {
-    display: flex;
+    display: flex; /* show when burger clicked */
   }
 
-  .left-section {
-    width: 95%;
-    justify-content: flex-start;
-  }
+  .topbar {
+  
+        border-radius: 25px;
+        width: calc(100% - 0px);
+    }
+
+
 
   .profile-img {
     width: 40px;
@@ -154,25 +146,13 @@
   }
 
   .text p {
-    font-size: 11px;
-  }
-
-  .center-section {
-    width: 95%;
-    gap: 10px;
-    justify-content: flex-start;
-    flex-wrap: wrap;
+    font-size: 10px;
   }
 
   .lang-btn,
   .continue-btn {
-    font-size: 12px;
-    padding: 5px 10px;
-  }
-
-  .right-section {
-    width: 95%;
-    justify-content: flex-start;
+    font-size: 11px;
+    padding: 4px 8px;
   }
 
   .icon-btn {
