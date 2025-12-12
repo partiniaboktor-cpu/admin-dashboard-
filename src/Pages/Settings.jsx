@@ -47,10 +47,10 @@ const Settings = () => {
 
           {/* Form */}
           <label className="form-label">Full Name</label>
-          <input className="input-field" type="text" value="Partinia Bokotr" readOnly />
+          <input className="input-field22" type="text" value="Partinia Bokotr" readOnly />
 
           <label className="form-label">Email</label>
-          <input className="input-field" type="email" value="PartiniaBoktor.com" readOnly />
+          <input className="input-field22" type="email" value="PartiniaBoktor.com" readOnly />
 
           <div className="button-row">
             <button className="btn cancel">Cancel</button>
@@ -64,10 +64,10 @@ const Settings = () => {
           <p className="subtext">Enter your current password to make update</p>
 
           <label className="form-label">Current Password</label>
-          <input className="input-field" type="password" placeholder="Enter Password" />
+          <input className="input-field22" type="password" placeholder="Enter Password" />
 
           <label className="form-label">New Password</label>
-          <input className="input-field" type="password" placeholder="Enter New Password" />
+          <input className="input-field22" type="password" placeholder="Enter New Password" />
 
           <button className="btn update">Update Password</button>
         </div>

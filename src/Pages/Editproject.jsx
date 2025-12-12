@@ -3,11 +3,10 @@ import Aside from '../Components/Aside';
 import Nav from '../Components/Nav';
 import '../Pages/Editproject.css';
 import Title from '../Components/Title';
-import one from '../Images/one.png';
 import upload from '../Images/upload.svg';
 import Smalltitle from '../Components/Smalltitle';
 import Footer from '../Components/Footer';
-
+import one from '../Images/one.png';
 
 const Editproject = () => {
     return ( <>
@@ -21,110 +20,111 @@ const Editproject = () => {
 <div className='secdiv'>
 <Nav />
 
+<div className="container4">
+      {/* Left Section – Project Image */}
+      <div className="imageBox4">
+       <Title title="Project image" />
 
-<div className="project-editors">
-
-      {/* ---- LEFT: IMAGE CARD ---- */}
-      <div className="project-image-cards">
-        <h3>Project Image</h3>
-
-        <div className="project-img-wrappers">
+        <div className="imageWrapper4">
           <img
-            src={one} // replace with your image
+            src= 'one'
             alt="project"
-            className="project-img"
+            className="projectImg4"
           />
+
+          <div className="imageBtns4">
+            <button className="replaceBtn4">Replace</button>
+            <button className="removeBtn4">Remove</button>
+          </div>
         </div>
 
-        <div className="project-image-actionss">
-          <button className="replace-btns">Replace</button>
-          <button className="remove-btns">Remove</button>
-        </div>
-
-       <div className="upload-box"></div>
-
+        <button className="addImageBtn4">
+          ⬆️ Add Another Image
+        </button>
       </div>
 
-      {/* ---- RIGHT: FORM CARD ---- */}
-      <div className="project-info-cards">
-        <h3>Project information</h3>
+      {/* Right Section – Project Information */}
+      <div className="infoBox4">
+        <Title title="Project information" />
 
-        <div className="form-grids">
+        <div className="formGrid4">
+          <label className="label4">Project name</label>
+          <input className="input4" type="text" />
 
-          <input className="input-fields full" placeholder="Project name" />
+          <label className="label4">Description</label>
+          <textarea className="textarea4"></textarea>
 
-          <textarea className="input-fields full textarea" placeholder="Description" />
+          <div className="row4">
+            <div className="column4">
+              <label className="label4">Time frame</label>
+              <input className="input4" type="text" />
+            </div>
+            <div className="column4">
+              <label className="label4">Tools</label>
+              <input className="input4" type="text" />
+            </div>
+          </div>
 
-          <input className="input-fields" placeholder="Time frame" />
+          <div className="row4">
+            <div className="column4">
+              <label className="label4">My role</label>
+              <input className="input4" type="text" />
+            </div>
+            <div className="column4">
+              <label className="label4">Wire frame</label>
+              <div className="uploadBox4">⬆️</div>
+            </div>
+          </div>
 
-          <input className="input-fields" placeholder="Tools" />
+          <label className="label4">Visual design</label>
+          <div className="visualUpload4">⬆️</div>
 
-          <input className="input-fields" placeholder="My role" />
-
-          <div className="upload-box"></div>
-
-
-          <div className="upload-box"></div>
-
-
+          <button className="saveBtn4">Save changes</button>
         </div>
-
-        <button className="save-btns">Save changes</button>
       </div>
-
     </div>
-
-
 
 <Title title="SEO & Content Optimization" />
 
+<div className="seoContainer5">
 
-<div className="seo-container">
-<div className="seo-header">
-<h2>Page &lt;title&gt; Tag</h2>
-</div>
+      <button className="editBtn5">✎ Edit</button>
 
+      <div className="row5">
+        <div className="column5">
+          <label className="label5">Page &lt;title&gt; Tag</label>
+          <div className="selectBox5">
+            <select className="selectInput5">
+              <option>Category</option>
+              <option>Home</option>
+              <option>Project</option>
+              <option>About</option>
+            </select>
+            <span className="arrow5">⌄</span>
+          </div>
+        </div>
 
-<div className="seo-row">
-<div className="seo-field">
-<labelss>Category</labelss>
-<select>
-<option>Category</option>
-</select>
-</div>
+        <div className="column5">
+          <label className="label5">URL Name</label>
+          <div className="urlBox5">
+            <input type="text" placeholder="Link" className="urlInput5" />
+            <span className="editIcon5">✎</span>
+          </div>
+        </div>
+      </div>
 
+      <label className="label5">Meta Description</label>
+      <textarea className="textarea5"></textarea>
 
-<div className="seo-field">
-<labelss>URL Name</labelss>
-<div className="input-wrapper">
-<input type="text" placeholder="Link" />
-<span className="edit-icons">✏️</span>
-</div>
-</div>
+      <label className="label5">Image Optimization</label>
+      <div className="imageUpload5">
+        <p>Drag image here</p>
+        <span>or</span>
+        <p className="browse5">Browse image</p>
+      </div>
 
-
-</div>
-
-
-<div className="seo-section">
-<labelss>Meta Description</labelss>
-<textarea placeholder=""></textarea>
-</div>
-
-
-<div className="seo-section">
-<labelss>Image Optimization</labelss>
-<div className="image-upload-box">
-<p>Drag image here</p>
-<span>or</span>
-<p className="browse">Browse image</p>
-</div>
-</div>
-
-
-<button className="delete-btn">Delete SEO</button>
-</div>
-
+      <button className="deleteBtn5">Delete SEO</button>
+    </div>
 
 <Footer />
 

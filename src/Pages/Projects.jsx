@@ -6,12 +6,6 @@ import Nav from '../Components/Nav';
 import Title from '../Components/Title';
 import Topbox from '../Components/Topbox' ;
 import '../Pages/Projects.css';
-import state1 from '../Images/state 1.svg' ;
-import state2 from '../Images/state 2.svg' ;
-import edit from '../Images/edit.svg' ;
-import trash from '../Images/delete.svg' ;
-import Lightbuttons from '../Components/Lightbuttons';
-import Pagenumber from '../Components/Pagenumber';
 import Footer from '../Components/Footer';
 
 
