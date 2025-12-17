@@ -101,6 +101,8 @@ input {
   font-size: 15px;
   cursor: pointer;
   transition: 0.3s ease;
+  margin: 0 auto;
+
 }
 
 .btn-signin:hover {
@@ -108,12 +110,11 @@ input {
   transform: translateY(-2px);
 }
 
-.forgot {
+.forget {
   color: var(--grey);
   font-size: 13px;
-  margin-top: -8px;
-  margin-bottom: 15px;
   cursor: pointer;
+
 }
 
 /* ---------- SOCIAL PROVIDERS ---------- */
@@ -183,6 +184,7 @@ input {
 
   label {
     font-size: 13px;
+
   }
 
   .forgot,

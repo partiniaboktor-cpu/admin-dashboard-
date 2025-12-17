@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import React, { Component } from 'react';
 import Aside from '../Components/Aside';
 import Nav from '../Components/Nav';
@@ -7,10 +7,16 @@ import Title from '../Components/Title';
 import Topbox from '../Components/Topbox' ;
 import '../Pages/Projects.css';
 import Footer from '../Components/Footer';
+import {supabase} from "../Supabase" ;
 
 
 
 const Projects = () => {
+
+const [loading, setLoading] = useState(true);
+const [projects, setProjects] = useState("") ;
+
+// console.log("projects:", projects, Array.isArray(projects));
 
   const data = [
     { name: "ecommerce", views: "43 views", date: "11/12/22", state: false },
@@ -37,9 +43,26 @@ const [open, setOpen] = useState(false);
     setSelected(item);
     setOpen(false);
   };
+  
+
+
+useEffect(()=>{
+
+ async function getAllProjectsAPI(){
+  const res = await supabase.from("Projects").select("*");
+  setProjects(res.data);
+  // console.log(res.data);
+    setLoading(false);
+}
+getAllProjectsAPI();
+
+
+},[]);
+if (loading) return <p>Loading...</p>;
 
     return ( <>
     
+    {/* {console.log(Projects)}  */}
     <div className='bigdiv'>
 
         <div className='aside'>
@@ -146,31 +169,37 @@ const [open, setOpen] = useState(false);
           </tr>
         </thead>
 
-        <tbody>
-          {data.map((row, i) => (
-            <tr key={i}>
-              <td>{row.name}</td>
-              <td>{row.name}</td>
-              <td>{row.views}</td>
-              <td>{row.date}</td>
+    <tbody>
+  {projects.length > 0 ? (
+    projects.map((project, index) => (
+      <tr key={project.id || index}>
 
-              {/* Toggle Switch */}
-              <td>
-                <label className="switch">
-                  <input type="checkbox" defaultChecked={row.state} />
-                  <span className="slider"></span>
-                </label>
-              </td>
+        {/* <td>{project.Scope}</td> */}
+        <td>{project.Title}</td>
+        <td>{project.Title}</td>
+        <td>{project.Role}</td>
+        <td>{project.Tools}</td>
+        <td>
+          <label className="switch">
+            <input type="checkbox" defaultChecked={project.state} />
+            <span className="slider"></span>
+          </label>
+        </td>
 
-          <td className="icons22">
-  <button className="icon-btn">Delete</button>
-  <Link className='nes' to="/editprojects">
-  <h3 className='icon-btn'>Edit</h3>
-</Link>
-</td>
-            </tr>
-          ))}
-        </tbody>
+        <td className="icons22">
+          <button className="icon-btn">Delete</button>
+          <Link to={`/editprojects/${project.id}`} className="nes">
+            <h3 className="icon-btn">Edit</h3>
+          </Link>
+        </td>
+      </tr>
+    ))
+  ) : (
+    <tr>
+      <td colSpan="6">No projects found</td>
+    </tr>
+  )}
+</tbody>
       </table>
 
       {/* PAGINATION */}
@@ -180,6 +209,13 @@ const [open, setOpen] = useState(false);
         <button className="page-btn dark">Next</button>
       </div>
     </div>
+
+
+{
+  projects.map((project) =>{
+    console.log(project)
+  })
+}
 
 
 <Footer />

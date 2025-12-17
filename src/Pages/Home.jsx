@@ -1,4 +1,6 @@
-import React, { Component } from 'react';
+
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Nav from '../Components/Nav.jsx' ;
 import '../Pages/Home.css';
 import Topbox from '../Components/Topbox.jsx';
@@ -10,9 +12,37 @@ import profile from '../Images/profile.svg' ;
 import graph from '../Images/graph.svg' ;
 import Footer from '../Components/Footer.jsx';
 import { Link } from "react-router-dom";
+import { supabase } from "../Supabase";
 
 
 const Homedashboard = () => {
+
+const navigate = useNavigate();
+
+  const [loading, setLoading] = useState(true);
+const [toptables, settoptables] = useState([]);
+const [small_table, setsmall_table] = useState([]);
+
+  useEffect(() => {
+    async function getAlltoptablesAPI() {
+      const res = await supabase.from("toptables").select("*");
+settoptables(res.data);
+      setLoading(false);
+    }
+    getAlltoptablesAPI();
+  }, []);
+
+useEffect(() => {
+    async function getAllsmall_tableAPI() {
+      const res = await supabase.from("small_table").select("*");
+setsmall_table(res.data);
+      setLoading(false);
+    }
+    getAllsmall_tableAPI();
+  }, []);
+
+  if (loading) return <p>Loading...</p>;
+  
     return ( <>
 
 <div className='bigdiv'>
@@ -39,23 +69,18 @@ const Homedashboard = () => {
 
 
 <div className='topboxes'>
-<Topbox 
-  title1="Published projects"
-  title2="{24}"
-  title3="Last updated: [ 12 OCT ]"
-/>
 
+  {
+toptables.map((toptables)=>{
+return  <>
 <Topbox 
-  title1="Visitors analytics"
-  title2="{4 unread}"
-  title3="Last updated: [ 12 OCT ]"
+  title1={toptables.title}
+  title2={toptables.sub_title}
+  title3={toptables.last_update}
 />
-
-<Topbox 
-  title1="Messages Count"
-  title2="{2,300}"
-  title3="Last updated: [ 12 OCT ]"
-/>
+</>
+})
+}
 </div>
 
 <Title title="Quick actions" />
@@ -68,11 +93,18 @@ const Homedashboard = () => {
 </div> 
 
 <div className='topboxess'>
+
+  {
+small_table.map((small_table)=>{
+return  <>
 <Topbox 
-  title1="Hero preview"
-  title2="Title-portfolio"
-  title3="CTA previews"
+  title1={small_table.title}
+  title2={small_table.sub_title}
+  title3={small_table.last_update}
 />
+</>
+})
+}
 <div className='secbox'>
 
     <div className='part1'>

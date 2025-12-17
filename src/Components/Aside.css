@@ -113,17 +113,25 @@
   transition: 0.3s;
 }
 
+/* ---------------- MOBILE SIDEBAR & BURGER ---------------- */
 @media (max-width: 768px) {
-  .sidebar {
-    left: -300px;
-    z-index: 998;
+
+  /* BURGER MUST SHOW */
+  .burger {
+    display: block !important;
+    z-index: 1001;
   }
 
+  /* HIDE SIDEBAR BY DEFAULT */
+  .sidebar {
+    left: -260px;      /* slide off screen */
+    transition: left 0.3s ease;
+    z-index: 1000;
+  }
+
+  /* WHEN OPEN, SLIDE IT IN */
   .sidebar.open {
     left: 0;
   }
 
-  .burger {
-    display: block; /* NOW IT WORKS */
-  }
 }
