@@ -1,5 +1,6 @@
+
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import React, { Component } from 'react';
 import '../Pages/Messages.css' ;
 import Aside from '../Components/Aside';
 import Nav from '../Components/Nav';
@@ -7,11 +8,37 @@ import Title from '../Components/Title' ;
 import Topbox from '../Components/Topbox';
 import myimg from '../Images/myimg.png'
 import trash from '../Images/delete.svg'
-import Pagenumber from '../Components/Pagenumber';
 import Footer from '../Components/Footer';
+import { supabase } from "../Supabase";
 
 
 const Messages = () => {
+
+  const [loading, setLoading] = useState(true);
+const [messages, setmessages] = useState([]);
+const [main_titles, setmain_titles] = useState([]);
+
+  useEffect(() => {
+    async function getAllmessagesAPI() {
+      const res = await supabase.from("messages").select("*");
+setmessages(res.data);
+      setLoading(false);
+    }
+    getAllmessagesAPI();
+  }, []);
+
+  if (loading) return <p>Loading...</p>;
+
+
+
+  useEffect(() => {
+    async function getAllmain_titlesAPI() {
+      const res = await supabase.from("main_titles").select("*");
+setmain_titles(res.data);
+    }
+    getAllmain_titlesAPI();
+  }, []);
+
     return ( <>
     
     <div className='bigdiv'>
@@ -34,7 +61,7 @@ const Messages = () => {
 </div>
 
 <div className='top-messages'>
-<Title title="Messages" />
+<Title title={main_titles.title} />
 
 <div className='right-msg'>
  
@@ -66,8 +93,55 @@ const Messages = () => {
 />
 </div>
 
+
 <div className='allmsgsfield'>
 
+
+{
+messages.map((messages)=>{
+return  <>
+<div className='msgs-type'>
+<div className='tick'></div>
+<img className='sender-img' src={myimg} alt="sender image" />
+<Link to="/messagedetail" className="sender-name">
+  {messages.name}
+</Link>
+<button className='user'>{messages.type}</button>
+<p className='sender-msg'>{messages.message_description}</p>
+<img src={trash} alt="" />
+</div>
+</>
+})
+}
+
+
+
+{/* <div className='msgs-type'>
+<div className='tick'></div>
+<img className='sender-img' src={myimg} alt="sender image" />
+<Link to="/messagedetail" className="sender-name">
+  Ramez Raouf
+</Link>
+<button className='user'>User testing</button>
+<p className='sender-msg'>Hi partinia , We need to do user testing by Monday ,<br></br> Please add  me in project group </p>
+<img src={trash} alt="" />
+</div>
+
+
+
+<div className='msgs-type'>
+<div className='tick'></div>
+<img className='sender-img' src={myimg} alt="sender image" />
+<Link to="/messagedetail" className="sender-name">
+  Ramez Raouf
+</Link>
+<button className='user'>User testing</button>
+<p className='sender-msg'>Hi partinia , We need to do user testing by Monday ,<br></br> Please add  me in project group </p>
+<img src={trash} alt="" />
+</div>
+
+
+
 <div className='msgs-type'>
 <div className='tick'></div>
 <img className='sender-img' src={myimg} alt="sender image" />
@@ -95,46 +169,6 @@ const Messages = () => {
 
 
 
-<div className='msgs-type'>
-<div className='tick'></div>
-<img className='sender-img' src={myimg} alt="sender image" />
-<Link to="/messagedetail" className="sender-name">
-  Ramez Raouf
-</Link>
-<button className='user'>User testing</button>
-<p className='sender-msg'>Hi partinia , We need to do user testing by Monday ,<br></br> Please add  me in project group </p>
-<img src={trash} alt="" />
-</div>
-
-
-
-<div className='msgs-type'>
-<div className='tick'></div>
-<img className='sender-img' src={myimg} alt="sender image" />
-<Link to="/messagedetail" className="sender-name">
-  Ramez Raouf
-</Link>
-<button className='user'>User testing</button>
-<p className='sender-msg'>Hi partinia , We need to do user testing by Monday ,<br></br> Please add  me in project group </p>
-<img src={trash} alt="" />
-</div>
-
-
-
-
-<div className='msgs-type'>
-<div className='tick'></div>
-<img className='sender-img' src={myimg} alt="sender image" />
-<Link to="/messagedetail" className="sender-name">
-  Ramez Raouf
-</Link>
-<button className='user'>User testing</button>
-<p className='sender-msg'>Hi partinia , We need to do user testing by Monday ,<br></br> Please add  me in project group </p>
-<img src={trash} alt="" />
-</div>
-
-
-
 
 <div className='msgs-type'>
 <div className='tick'></div>
@@ -158,7 +192,7 @@ const Messages = () => {
 <button className='user'>User testing</button>
 <p className='sender-msg'>Hi partinia , We need to do user testing by Monday ,<br></br> Please add  me in project group </p>
 <img src={trash} alt="" />
-</div>
+</div> */}
 
 <div className="pagination">
         <button className="page-btn">Previous</button>

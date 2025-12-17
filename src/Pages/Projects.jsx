@@ -14,7 +14,7 @@ import {supabase} from "../Supabase" ;
 const Projects = () => {
 
 const [loading, setLoading] = useState(true);
-const [projects, setProjects] = useState("") ;
+const [final_projects, setfinal_projects] = useState("") ;
 
 // console.log("projects:", projects, Array.isArray(projects));
 
@@ -48,13 +48,13 @@ const [open, setOpen] = useState(false);
 
 useEffect(()=>{
 
- async function getAllProjectsAPI(){
-  const res = await supabase.from("Projects").select("*");
-  setProjects(res.data);
+ async function getAllfinal_projectsAPI(){
+  const res = await supabase.from("final_projects").select("*");
+  setfinal_projects(res.data);
   // console.log(res.data);
     setLoading(false);
 }
-getAllProjectsAPI();
+getAllfinal_projectsAPI();
 
 
 },[]);
@@ -170,25 +170,23 @@ if (loading) return <p>Loading...</p>;
         </thead>
 
     <tbody>
-  {projects.length > 0 ? (
-    projects.map((project, index) => (
-      <tr key={project.id || index}>
-
-        {/* <td>{project.Scope}</td> */}
-        <td>{project.Title}</td>
-        <td>{project.Title}</td>
-        <td>{project.Role}</td>
-        <td>{project.Tools}</td>
+  {final_projects.length > 0 ? (
+    final_projects.map((final_projects, index) => (
+      <tr key={final_projects.Project1 || index}>
+        <td>{final_projects.Project2}</td>
+        <td>{final_projects.views}</td>
+        <td>{final_projects.date_published}</td>
+        {/* <td>{final_projects.Tools}</td> */}
         <td>
           <label className="switch">
-            <input type="checkbox" defaultChecked={project.state} />
+            <input type="checkbox" defaultChecked={final_projects.state} />
             <span className="slider"></span>
           </label>
         </td>
 
         <td className="icons22">
           <button className="icon-btn">Delete</button>
-          <Link to={`/editprojects/${project.id}`} className="nes">
+          <Link to={`/editprojects/${final_projects.id}`} className="nes">
             <h3 className="icon-btn">Edit</h3>
           </Link>
         </td>
@@ -212,7 +210,7 @@ if (loading) return <p>Loading...</p>;
 
 
 {
-  projects.map((project) =>{
+  final_projects.map((project) =>{
     console.log(project)
   })
 }
