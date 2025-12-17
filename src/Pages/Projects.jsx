@@ -15,6 +15,7 @@ const Projects = () => {
 
 const [loading, setLoading] = useState(true);
 const [final_projects, setfinal_projects] = useState("") ;
+const [main_titles, setmain_titles] = useState([]);
 
 // console.log("projects:", projects, Array.isArray(projects));
 
@@ -56,8 +57,17 @@ useEffect(()=>{
 }
 getAllfinal_projectsAPI();
 
-
 },[]);
+
+  useEffect(() => {
+    async function getAllmain_titlesAPI() {
+      const res = await supabase.from("main_titles").select("*");
+setmain_titles(res.data);
+    }
+    getAllmain_titlesAPI();
+  }, []);
+
+
 if (loading) return <p>Loading...</p>;
 
     return ( <>
@@ -82,7 +92,7 @@ if (loading) return <p>Loading...</p>;
         </button>
         </div>
  
-<Title title="Overall Projects" />
+<Title title={main_titles[3]?.title} />
 
 <div className='topboxes'>
 <Topbox 
@@ -110,7 +120,7 @@ if (loading) return <p>Loading...</p>;
 />
 </div>
 
-<Title title=" Projects" />
+<Title title={main_titles[4]?.title} />
 
  <div className="table-container">
 

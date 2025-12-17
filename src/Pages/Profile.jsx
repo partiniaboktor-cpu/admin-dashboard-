@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+
+import React, { useEffect, useState } from "react";
 import '../Pages/Profile.css';
 import Aside from '../Components/Aside';
 import Nav from '../Components/Nav';
@@ -6,9 +7,24 @@ import Title from '../Components/Title';
 import myimg from '../Images/myimg.png' ;
 import Footer from '../Components/Footer' ;
 import { Link } from "react-router-dom";
+import { supabase } from "../Supabase";
 
 
 const Profile = () => {
+
+      const [loading, setLoading] = useState(true);
+    const [profile, setprofile] = useState([]);
+
+    useEffect(() => {
+        async function getAllprofileAPI() {
+          const res = await supabase.from("profile").select("*");
+    setprofile(res.data);
+        }
+        getAllprofileAPI();
+      }, []);
+    
+        if (loading) return <p>Loading...</p>;
+
     return ( <>
     
     <div className='bigdiv'>
@@ -51,18 +67,18 @@ const Profile = () => {
 <div className='three'>
 <div className='firstone'>
     <p className='full-name'>Full name</p>
-    <p className='names'>Partinia Boktor</p>
+    <p className='names'>{profile.full_name}</p>
 </div>
 
 <div className='firstone'>
     <p className='full-name'>Email</p>
-    <p className='names'>PartiniaBoktor@gmail.com</p>
+    <p className='names'>{profile.email}</p>
 </div>
 
 
 <div className='firstone'>
     <p className='full-name'>Phone</p>
-    <p className='names'>01202061400</p>
+    <p className='names'>{profile.phone}</p>
 </div>
 </div>
 </div>
@@ -76,7 +92,7 @@ const Profile = () => {
 <button className='edits'>Edit</button>
 </div>
 
-<div className='cairo'>Cairo,Egypt</div>
+<div className='cairo'>{profile.location}</div>
 </div>
 
 
@@ -88,7 +104,7 @@ const Profile = () => {
 <button className='edits'>Edit</button>
 </div>
 
-    <p className='namess'>I’’m passionate in ux/ui designer which makes me being in the happiest mood , since i was young i wanted to be a designer and grow deep more into my the field . Being a designer isn’t easy but for me is so passionate of doing it. Started my field of ux/ui designer when i was 18 years old when i was too young that makes me more exited to get more deeper into it.</p>
+    <p className='namess'>{profile.bio}</p>
 </div>
 
 <Footer />

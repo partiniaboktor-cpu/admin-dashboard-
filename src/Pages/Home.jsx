@@ -22,6 +22,7 @@ const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
 const [toptables, settoptables] = useState([]);
 const [small_table, setsmall_table] = useState([]);
+const [main_titles, setmain_titles] = useState([]);
 
   useEffect(() => {
     async function getAlltoptablesAPI() {
@@ -39,6 +40,14 @@ setsmall_table(res.data);
       setLoading(false);
     }
     getAllsmall_tableAPI();
+  }, []);
+
+  useEffect(() => {
+    async function getAllmain_titlesAPI() {
+      const res = await supabase.from("main_titles").select("*");
+setmain_titles(res.data);
+    }
+    getAllmain_titlesAPI();
   }, []);
 
   if (loading) return <p>Loading...</p>;
@@ -83,7 +92,7 @@ return  <>
 }
 </div>
 
-<Title title="Quick actions" />
+<Title title={main_titles[1]?.title} />
 
 <div className='butns'>
 <Lightbuttons title1="+ new project" />
@@ -121,7 +130,7 @@ return  <>
 </div>
 </div>
 
-<Title title="Featured projects preview" />
+<Title title={main_titles[2]?.title} />
 
 <div className='graph'>
 

@@ -27,9 +27,6 @@ setmessages(res.data);
     getAllmessagesAPI();
   }, []);
 
-  if (loading) return <p>Loading...</p>;
-
-
 
   useEffect(() => {
     async function getAllmain_titlesAPI() {
@@ -38,6 +35,8 @@ setmain_titles(res.data);
     }
     getAllmain_titlesAPI();
   }, []);
+
+    if (loading) return <p>Loading...</p>;
 
     return ( <>
     
@@ -61,7 +60,8 @@ setmain_titles(res.data);
 </div>
 
 <div className='top-messages'>
-<Title title={main_titles.title} />
+<Title title={main_titles[0]?.title} />
+
 
 <div className='right-msg'>
  
@@ -114,85 +114,6 @@ return  <>
 })
 }
 
-
-
-{/* <div className='msgs-type'>
-<div className='tick'></div>
-<img className='sender-img' src={myimg} alt="sender image" />
-<Link to="/messagedetail" className="sender-name">
-  Ramez Raouf
-</Link>
-<button className='user'>User testing</button>
-<p className='sender-msg'>Hi partinia , We need to do user testing by Monday ,<br></br> Please add  me in project group </p>
-<img src={trash} alt="" />
-</div>
-
-
-
-<div className='msgs-type'>
-<div className='tick'></div>
-<img className='sender-img' src={myimg} alt="sender image" />
-<Link to="/messagedetail" className="sender-name">
-  Ramez Raouf
-</Link>
-<button className='user'>User testing</button>
-<p className='sender-msg'>Hi partinia , We need to do user testing by Monday ,<br></br> Please add  me in project group </p>
-<img src={trash} alt="" />
-</div>
-
-
-
-<div className='msgs-type'>
-<div className='tick'></div>
-<img className='sender-img' src={myimg} alt="sender image" />
-<Link to="/messagedetail" className="sender-name">
-  Ramez Raouf
-</Link>
-<button className='user'>User testing</button>
-<p className='sender-msg'>Hi partinia , We need to do user testing by Monday ,<br></br> Please add  me in project group </p>
-<img src={trash} alt="" />
-</div>
-
-
-
-
-<div className='msgs-type'>
-<div className='tick'></div>
-<img className='sender-img' src={myimg} alt="sender image" />
-<Link to="/messagedetail" className="sender-name">
-  Ramez Raouf
-</Link>
-<button className='user'>User testing</button>
-<p className='sender-msg'>Hi partinia , We need to do user testing by Monday ,<br></br> Please add  me in project group </p>
-<img src={trash} alt="" />
-</div>
-
-
-
-
-<div className='msgs-type'>
-<div className='tick'></div>
-<img className='sender-img' src={myimg} alt="sender image" />
-<Link to="/messagedetail" className="sender-name">
-  Ramez Raouf
-</Link>
-<button className='user'>User testing</button>
-<p className='sender-msg'>Hi partinia , We need to do user testing by Monday ,<br></br> Please add  me in project group </p>
-<img src={trash} alt="" />
-</div>
-
-
-
-<div className='msgs-type'>
-<div className='tick'></div>
-<img className='sender-img' src={myimg} alt="sender image" />
-<Link to="/messagedetail" className="sender-name">
-  Ramez Raouf
-</Link>
-<button className='user'>User testing</button>
-<p className='sender-msg'>Hi partinia , We need to do user testing by Monday ,<br></br> Please add  me in project group </p>
-<img src={trash} alt="" />
-</div> */}
 
 <div className="pagination">
         <button className="page-btn">Previous</button>

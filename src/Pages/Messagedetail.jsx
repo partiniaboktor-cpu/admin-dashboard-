@@ -1,9 +1,26 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from "react";
 import Aside from '../Components/Aside';
 import Nav from '../Components/Nav';
 import '../Pages/Messagedetail.css';
+import { supabase } from "../Supabase";
 
 const Messagedetail = () => {
+
+  const [loading, setLoading] = useState(true);
+const [messages, setmessages] = useState([]);
+
+
+  useEffect(() => {
+    async function getAllmessagesAPI() {
+      const res = await supabase.from("messages").select("*");
+setmessages(res.data);
+      setLoading(false);
+    }
+    getAllmessagesAPI();
+  }, []);
+  
+    if (loading) return <p>Loading...</p>;
+
     return ( <>
     
     <div className='bigdiv'>
@@ -23,30 +40,19 @@ const Messagedetail = () => {
           <div className="avatar-placeholder"></div>
 
           <div className="sender-text">
-            <h3 className="sender-name">Ramez Raouf</h3>
+            <h3 className="sender-name">{messages[0]?.name}</h3>
           </div>
         </div>
 
-        <span className="message-date">Date 31/12/2025</span>
+        <span className="message-date">{messages[0]?.message_date}</span>
       </div>
 
       {/* Title */}
-      <h2 className="message-title">Work Inquiry to Designer</h2>
+      <h2 className="message-title">{messages[0]?.message_title}</h2>
 
       {/* Body */}
       <p className="message-body">
-        I hope you’re doing well. I’m reaching out because I’ve been following
-        your work for a while, and I truly admire your creative direction,
-        attention to detail, and the unique aesthetic you bring to every
-        project. I’m currently looking for a designer who can help me with a new
-        project, and I believe your style aligns perfectly with what I’m aiming
-        to achieve. 
-        <br /><br />
-        I would love to discuss the possibility of working together, understand
-        your availability, learn about your process, and go over any
-        requirements you may have regarding budget and timelines. If this sounds
-        like something you’re open to, please let me know a suitable time for
-        you so we can move forward. Looking forward to hearing from you.
+        {messages[1]?.message_detail}
       </p>
 
       {/* Icons Removed */}
