@@ -1,11 +1,39 @@
-import React, { Component } from 'react';
+
+import React, { useEffect, useState } from "react";
 import Aside from '../Components/Aside';
 import Nav from '../Components/Nav';
 import '../Pages/Settings.css';
 import Title from '../Components/Title';
 import Footer from '../Components/Footer';
+import { supabase } from "../Supabase";
 
 const Settings = () => {
+
+ const [loading, setLoading] = useState(true);
+const [settings, setsettings] = useState([]);
+const [main_titles, setmain_titles] = useState([]);
+
+  useEffect(() => {
+    async function getAllsettingsAPI() {
+      const res = await supabase.from("settings").select("*");
+setsettings(res.data);
+      setLoading(false);
+    }
+    getAllsettingsAPI();
+  }, []);
+
+
+  useEffect(() => {
+    async function getAllmain_titlesAPI() {
+      const res = await supabase.from("main_titles").select("*");
+setmain_titles(res.data);
+    }
+    getAllmain_titlesAPI();
+  }, []);
+
+    if (loading) return <p>Loading...</p>;
+
+
     return ( <>
     
     <div className='bigdiv'>
@@ -19,7 +47,7 @@ const Settings = () => {
 
 
     <div className="settings-container">
-      <Title title="Settings" />
+      <Title title= {main_titles[6]?.title} />
 
       <div className="tabs">
         <button className="tab active">Profile</button>

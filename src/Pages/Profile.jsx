@@ -14,16 +14,27 @@ const Profile = () => {
 
       const [loading, setLoading] = useState(true);
     const [profile, setprofile] = useState([]);
+    const [main_titles, setmain_titles] = useState([]);
 
     useEffect(() => {
         async function getAllprofileAPI() {
           const res = await supabase.from("profile").select("*");
     setprofile(res.data);
+          setLoading(false);
         }
         getAllprofileAPI();
       }, []);
     
-        if (loading) return <p>Loading...</p>;
+         useEffect(() => {
+           async function getAllmain_titlesAPI() {
+             const res = await supabase.from("main_titles").select("*");
+       setmain_titles(res.data);
+           }
+           getAllmain_titlesAPI();
+         }, []);
+       
+           if (loading) return <p>Loading...</p>;
+       
 
     return ( <>
     
@@ -46,18 +57,31 @@ const Profile = () => {
 </button>
 </div>
 
-<Title title="Profile" />
+<Title title= {main_titles[5]?.title} />
+
+{
+profile.map((profile)=>{
+return  <>
 
 <div className='myimgs'>
-<img className='myimg' src={myimg} alt="" />
+<img className='myimg' src={profile.img} alt="" />
 <button className='new'>Upload new photo</button>
 </div>
+</>
+})
+}
+
 
 <p className='size'>At least 800x800 px / recommended.JPG or PNG is allowed / Max 2MB</p>
 
 <hr className='line'></hr>
 
+{
+profile.map((profile)=>{
+return  <>
+
 <div className='hold'>
+
 
     <div className='personal-box'>
 <h2 className='personal'>Personal info</h2>
@@ -69,6 +93,7 @@ const Profile = () => {
     <p className='full-name'>Full name</p>
     <p className='names'>{profile.full_name}</p>
 </div>
+
 
 <div className='firstone'>
     <p className='full-name'>Email</p>
@@ -83,8 +108,13 @@ const Profile = () => {
 </div>
 </div>
 
+</>
+})
+}
 
-
+{
+profile.map((profile)=>{
+return  <>
 <div className='hold'>
 
     <div className='personal-box'>
@@ -104,8 +134,12 @@ const Profile = () => {
 <button className='edits'>Edit</button>
 </div>
 
-    <p className='namess'>{profile.bio}</p>
+    <p className='namess'>{profile.Bio}</p>
 </div>
+
+</>
+})
+}
 
 <Footer />
 </div>
