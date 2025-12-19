@@ -23,6 +23,7 @@ const navigate = useNavigate();
 const [toptables, settoptables] = useState([]);
 const [small_table, setsmall_table] = useState([]);
 const [main_titles, setmain_titles] = useState([]);
+const [home, sethome] = useState([]);
 
   useEffect(() => {
     async function getAlltoptablesAPI() {
@@ -48,6 +49,14 @@ setsmall_table(res.data);
 setmain_titles(res.data);
     }
     getAllmain_titlesAPI();
+  }, []);
+
+    useEffect(() => {
+    async function getAllhomeAPI() {
+      const res = await supabase.from("home").select("*");
+sethome(res.data);
+    }
+    getAllhomeAPI();
   }, []);
 
   if (loading) return <p>Loading...</p>;
@@ -95,10 +104,10 @@ return  <>
 <Title title={main_titles[1]?.title} />
 
 <div className='butns'>
-<Lightbuttons title1="+ new project" />
-<Lightbuttons title1="Edit hero section" />
-<Lightbuttons title1="Edit About me" />
-<Lightbuttons title1="Change services" />
+<Lightbuttons title1={home[0]?.btns}/>
+<Lightbuttons title1={home[1]?.btns} />
+<Lightbuttons title1={home[2]?.btns} />
+<Lightbuttons title1={home[3]?.btns} />
 </div> 
 
 <div className='topboxess'>
@@ -118,7 +127,7 @@ return  <>
 
     <div className='part1'>
     <div className='ab'>About preview</div>
-    <Darkbutton title="Edit" /> 
+    <Darkbutton title={home[4]?.btns} /> 
     </div>
 
    
@@ -138,16 +147,18 @@ return  <>
 
     <div className='part11'>
     <div className='ab'>About preview</div>
-    <Darkbutton title="view all" /> 
+    <Darkbutton title={home[5]?.btns} /> 
     </div>
+      {
+home.map((home)=>{
+return  <>
     <div className='part22'>
-    <h4 className='shorts'>.Updated about me</h4>
-    <h4 className='shorts'>.Added new services</h4>
-    <h4 className='shortss'>.New inquiry received</h4>
-    <h4 className='shortss'>.New message received</h4>
-    <h4 className='shortss'>.Added new skills</h4>
-        
+    <h4 className='shorts'>{home.infos}</h4>
     </div>
+
+</>
+})
+}
 
 </div>
 

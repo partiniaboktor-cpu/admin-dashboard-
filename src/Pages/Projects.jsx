@@ -156,11 +156,11 @@ if (loading) return <p>Loading...</p>;
 
 
   <div className="action-btn">
-    Search
+ Search
   </div>
 
   <div className="action-btn">
-    Filters
+    Filter
   </div>
 
   <div className="action-btn">Download all</div>
