@@ -7,9 +7,9 @@ import { supabase } from '../Supabase';
 
 const Newproject = () => {
 
-const [Title, setTitle] = useState ("");
+const [Project_overview, setProject_overview] = useState ("");
 async function addItem() {
-const res = await supabase.from("Projects").insert({"title":Title})
+const res = await supabase.from("Projects").insert({"Project_overview":Project_overview})
 
 console.log(res)
 }
@@ -53,8 +53,8 @@ console.log(res)
       <label>Project overview</label>
       <input
         type="text"
-        value={Title}
-        onChange={(e) => setTitle(e.target.value)}
+        value={Project_overview}
+        onChange={(e) => setProject_overview(e.target.value)}
         className="input"
       />
     </form>
