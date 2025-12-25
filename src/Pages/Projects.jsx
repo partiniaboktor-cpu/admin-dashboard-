@@ -68,6 +68,13 @@ setmain_titles(res.data);
   }, []);
 
 
+async function deleteItem(id) {
+  const res = await supabase.from("final_projects").delete().eq("id",id);
+}
+
+
+
+
 if (loading) return <p>Loading...</p>;
 
     return ( <>
@@ -195,8 +202,8 @@ if (loading) return <p>Loading...</p>;
         </td>
 
         <td className="icons22">
-          <button className="icon-btn">Delete</button>
-          <Link to={`/editprojects/${final_projects.id}`} className="nes">
+          <button onClick={()=>deleteItem(final_projects.id)} className="icon-btn">Delete</button>
+          <Link to={/Editproject/} className="nes">
             <h3 className="icon-btn">Edit</h3>
           </Link>
         </td>
