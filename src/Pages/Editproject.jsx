@@ -3,10 +3,7 @@ import Aside from '../Components/Aside';
 import Nav from '../Components/Nav';
 import '../Pages/Editproject.css';
 import Title from '../Components/Title';
-import upload from '../Images/upload.svg';
-import Smalltitle from '../Components/Smalltitle';
 import Footer from '../Components/Footer';
-import one from '../Images/one.png';
 
 const Editproject = () => {
     return ( <>

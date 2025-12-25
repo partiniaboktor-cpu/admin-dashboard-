@@ -202,10 +202,11 @@ if (loading) return <p>Loading...</p>;
         </td>
 
         <td className="icons22">
-          <button onClick={()=>deleteItem(final_projects.id)} className="icon-btn">Delete</button>
-          <Link to={/Editproject/} className="nes">
-            <h3 className="icon-btn">Edit</h3>
-          </Link>
+        <button onClick={()=>deleteItem(final_projects.id)} className="icon-btn">Delete</button>
+         
+<Link to="/Editproject">
+  <h3 className="icon-btn">Edit</h3>
+</Link>
         </td>
       </tr>
     ))

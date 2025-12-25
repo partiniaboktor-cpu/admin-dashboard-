@@ -1,10 +1,19 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import '../Pages/Newproject.css';
 import Aside from '../Components/Aside';
 import Nav from '../Components/Nav';
 import Footer from '../Components/Footer';
+import { supabase } from '../Supabase';
 
 const Newproject = () => {
+
+const [Title, setTitle] = useState ("");
+async function addItem() {
+const res = await supabase.from("Projects").insert({"title":Title})
+
+console.log(res)
+}
+
     return ( <>
     
 <div className='bigdiv'>
@@ -40,10 +49,17 @@ const Newproject = () => {
               <input type="text" className="input" />
             </div>
 
-            <div className="form-group">
-              <label>Project overview</label>
-              <input type="text" className="input" />
-            </div>
+             <form onSubmit={addItem} className="form-group">
+      <label>Project overview</label>
+      <input
+        type="text"
+        value={Title}
+        onChange={(e) => setTitle(e.target.value)}
+        className="input"
+      />
+    </form>
+  
+
 
             <div className="form-group">
               <label>Time frame</label>
@@ -82,7 +98,7 @@ const Newproject = () => {
       {/* BUTTONS */}
       <div className="button-row">
         <button className="btn discard">Discard</button>
-        <button className="btn add">Add Project</button>
+        <button onClick={addItem} className="btn add">Add Project</button>
       </div>
     </div>
 
